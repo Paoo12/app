@@ -1,1 +1,29 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+        <ion-header>
+          <ion-navbar>
+
+          </ion-navbar>
+        </ion-header>
+        
+        <ion-content>
+            <ion-list>
+                <button menuClose ion-item (click)="openPage()">
+                  Dashboard
+                </button>
+                <button menuClose ion-item (click)="openPage()">
+                  Courses
+                </button>
+                <button menuClose ion-item (click)="openPage()">
+                  Settings
+                </button>
+                <button menuClose ion-item (click)="closeMenu()">
+                  Logout
+                </button>
+              </ion-list>
+        
+        
+        
+        </ion-content>
+        </ion-menu>
+        
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
