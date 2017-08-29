@@ -1,22 +1,31 @@
-<ion-menu [content]="content" >
-        <ion-header>
-          <ion-navbar>
+<ion-menu [content]="content" >      
 
-          </ion-navbar>
-        </ion-header>
+    <ion-content style="background-color:#488aff;">
         
-        <ion-content>
-            <ion-list>
-                <button menuClose ion-item (click)="openPage()">
+        
+         <div style="background-color:#488aff;">
+           <div style="height:230px;">
+             <div class = "sidemenu-profile-container" (click) = " pushviewStorePage()" menuClose></div>
+          </div>
+        
+          <div style="height:40px;">
+            <img menuClose class="profile-photo-round" src="assets/img/test-img.jpg" (click) = "pushviewProfilePage()"  >
+            <span class="sidemenu-label-profile-name">Juan Dela Cruz</span>
+          </div>
+         </div> 
+        
+ 
+            <ion-list style="background-color:#488aff;">
+                <button menuClose ion-item (click)="openPage()" style="background-color:#488aff;">
                   Dashboard
                 </button>
-                <button menuClose ion-item (click)="openPage()">
+                <button menuClose ion-item (click)="openPage()" style="background-color:#488aff;">
                   Courses
                 </button>
-                <button menuClose ion-item (click)="openPage()">
+                <button menuClose ion-item (click)="openPage()" style="background-color:#488aff;">
                   Settings
                 </button>
-                <button menuClose ion-item (click)="closeMenu()">
+                <button menuClose ion-item (click)="closeMenu()" style="background-color:#488aff;">
                   Logout
                 </button>
               </ion-list>
