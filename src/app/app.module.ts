@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ModulesPage } from '../pages/modules/modules';
 import { PopoverPage } from '../pages/popover/popover';
+import { QuizPage } from '../pages/quiz/quiz';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PopoverPage } from '../pages/popover/popover';
     TabsPage,
     ModulesPage,
     PopoverPage,
+    QuizPage,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { PopoverPage } from '../pages/popover/popover';
     TabsPage,
     ModulesPage,
     PopoverPage,
+    QuizPage,
   ],
   providers: [
     StatusBar,

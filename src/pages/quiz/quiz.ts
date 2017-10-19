@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { NavController, PopoverController } from 'ionic-angular';
+import { PopoverPage } from '../popover/popover';
+
+@Component({
+  selector: 'page-quiz',
+  templateUrl: 'quiz.html'
+})
+export class QuizPage {
+
+    constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+        
+          }
+        
+          presentPopover(myEvent) {
+            let popover = this.popoverCtrl.create(PopoverPage);
+            popover.present({
+              ev: myEvent
+            });
+          }
+
+}
