@@ -1,12 +1,18 @@
-    ion-button{
-        opacity: 90%;
-    }
- .row1{
-     padding-top:120%;
-     font: "Serif";
+.row1{
+     outline:white solid 0.5px;
+     border-radius: 3px;
+     color:rgba(0,0,0,0.4);
+     font-weight: bold;
+     border: none;
+     margin: 0;
+     background: rgba(0,0,0,0.2);
+     font-family: helvetica, arial, sans-serif;
+     font-size: 19pt;
  }
-ion-content{
-    background-color: black;
-}
+ 
+.slide
+{
+    height: 70%;
 
+}
 

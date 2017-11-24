@@ -16,10 +16,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-image: url('../assets/img/bground.jpg');
+background-repeat: no-repeat;
+background-size: 100%;">
+<ion-card class="slide">
+<ion-slides pager >
+    
+      <ion-slide style="background-image: url(../assets/img/ipv4-1.jpg); background-repeat: no-repeat;background-size: cover;">
+      </ion-slide>
+    
+      <ion-slide style="background-image: url(../assets/img/ipv4-2.jpg); background-repeat: no-repeat;background-size: cover;">
+ 
+      </ion-slide>
+    
+      <ion-slide style="background-image: url(../assets/img/ipv4-3.jpg); background-repeat: no-repeat;background-size: cover;">
+  
+      </ion-slide>
+      <ion-slide style="background-image: url(../assets/img/ipv4-4.jpg); background-repeat: no-repeat;background-size: cover;">
+ 
+      </ion-slide>
+      <ion-slide style="background-image: url(../assets/img/ipv4-5.jpg);background-repeat: no-repeat;background-size: cover;">
+ 
+      </ion-slide>
+    
+    </ion-slides>
+  </ion-card>
+
+
     <div class="row1">
-  <ion-grid>
-   
+  <ion-grid> 
     <ion-row>
         <ion-col>
           <button ion-button block color="light" (click)="move()">
