@@ -9,9 +9,9 @@ import { QuizPage } from '../quiz/quiz';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-    tab1Root: any = HomePage;
-    tab2Root: any = ModulesPage;
-    tab3Root: any = QuizPage;
+    // tab1Root: any = HomePage;
+    // tab2Root: any = ModulesPage;
+    // tab3Root: any = QuizPage;
 
   constructor(public navCtrl: NavController) {
 

@@ -6,7 +6,7 @@
       </button>
     </ion-buttons>
     <ion-title>
-      Dashboard
+      Insert Title**
     </ion-title>
     <ion-buttons end>
     <button ion-button icon-only (click)="presentPopover($event)">
@@ -17,77 +17,65 @@
 </ion-header>
 
 <ion-content padding>
+    <div class="row1">
+  <ion-grid>
+   
+    <ion-row>
+        <ion-col>
+          <button ion-button block color="light" (click)="move()">
+            <ion-icon name="list">
+            Activity
+            </ion-icon>
+          </button>
+        </ion-col>
 
-  <ion-card>
-    <ion-card-header  class="card-header"> 
-      <ion-buttons>
-        <button ion-button icon-only>
-            <ion-icon name="information-circle" item-end></ion-icon>
-        </button>
+        <ion-col>
+          <button ion-button block color="light" (click)="move1()">
+              <ion-icon name="list-box">
+               Courses
+              </ion-icon>
+          </button>
+        </ion-col>
 
-              <!-- edit with DB -->
-      User U. User (Student)
-      </ion-buttons>
+        <ion-col>
+          <button ion-button block color="light" (click)="move2()">
+              <ion-icon name="create">
+                  Quizzes
+              </ion-icon>
+          </button>
+        </ion-col>   
+     </ion-row>
 
-    </ion-card-header>
-    <ion-card-content>
-      <div class="header-card-one">
-      <ion-item> Last Acitivty: </ion-item>
-      <ion-item> Today </ion-item>
-      </div>
-      <div class="header-card-two">
-      <ion-item> Courses: </ion-item>
-      <ion-item> 0 Completed </ion-item>
-      </div>
-    </ion-card-content>
-  </ion-card>
+     <ion-row>
+        <ion-col>
+          <button ion-button block color="light" (click)="move3()">
+              <ion-icon name="clipboard">
+                  Scores
+              </ion-icon>
+          </button>
+        </ion-col>
 
-  <ion-card>
-    <ion-card-header class="card-header">
-        <ion-buttons>
-            <button ion-button icon-only>
-                <ion-icon name="list-box" item-end></ion-icon>
-            </button>
-      Active Modules
-      <ion-badge item-end style="color:#f53d3d">3</ion-badge>
-        </ion-buttons>
-      
-    </ion-card-header>
-    
-    <ion-card-content>
-       <!-- edit with DB -->
-        <ion-list>
-            <button ion-item>
-              IP Addressing
-            </button>       
-            <button ion-item>
-              IPv4 Basic Subnetting
-            </button>     
-            <button ion-item>
-              IPv4 Variable Length Subnetting
-            </button>
-        </ion-list>
-    </ion-card-content>
-  </ion-card>
+        <ion-col>
+          <button ion-button block color="light" (click)="move4()">
+              <ion-icon name="calculator">
+                  IPv4 Calculator
+              </ion-icon>
+          </button>
+        </ion-col>
 
-  <ion-card>
-    <ion-card-header  class="card-header">
-        <ion-buttons>
-            <button ion-button icon-only>
-                <ion-icon name="stats" item-end></ion-icon>
-            </button>
-      My Scores
-        </ion-buttons>
-    </ion-card-header>
+        <ion-col>
+          <button ion-button block color="light" (click)="move5()">
+              <ion-icon name="bookmark">
+                  Bookmarks
+              </ion-icon>
+          </button>
+        </ion-col>
+     
+    </ion-row>
+   
 
-    <ion-card-content>
-      <ion-item> No Scores available yet </ion-item>
+ </ion-grid>
+</div>
 
-
-
-
-
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+ </ion-content>
 

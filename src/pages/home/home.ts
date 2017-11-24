@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
+import { TabsPage } from '../tabs/tabs';
+import { ModulesPage } from '../modules/modules';
+import { QuizPage } from '../quiz/quiz';
 
 @Component({
   selector: 'page-home',
@@ -17,5 +20,18 @@ export class HomePage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  move()
+  {
+    this.navCtrl.push(TabsPage);
+  }
+  move1()
+  {
+    this.navCtrl.push(ModulesPage);
+  }
+  move2()
+  {
+    this.navCtrl.push(QuizPage);  
   }
 }

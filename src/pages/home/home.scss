@@ -1,21 +1,12 @@
-.header-card-one
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
+    ion-button{
+        opacity: 90%;
+    }
+ .row1{
+     padding-top:120%;
+     font: "Serif";
+ }
+ion-content{
+    background-color: black;
 }
 
-.header-card-two
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-}
-.card-header
-{
-    background-color: #488aff;
-
-}
 

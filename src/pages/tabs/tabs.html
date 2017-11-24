@@ -1,5 +1,92 @@
-<ion-tabs selectedIndex="0">
-        <ion-tab [root]="tab1Root" tabIcon="paper" tabTitle="Activity"></ion-tab>
-        <ion-tab [root]="tab2Root" tabIcon="book" tabTitle="Modules"></ion-tab>
-        <ion-tab [root]="tab3Root" tabIcon="create" tabTitle="Quizes"></ion-tab>
-</ion-tabs>
+<ion-header>
+                <ion-navbar color="primary">
+                  <ion-buttons start>
+                    <button ion-button menuToggle>
+                      <ion-icon name="menu"></ion-icon>
+                    </button>
+                  </ion-buttons>
+                  <ion-title>
+                    Insert Title**
+                  </ion-title>
+                  <ion-buttons end>
+                  <button ion-button icon-only (click)="presentPopover($event)">
+                  <ion-icon name="contact" item-end></ion-icon>
+                  </button>
+                  </ion-buttons>
+                </ion-navbar>
+              </ion-header>
+              
+              <ion-content padding>
+              
+                  <ion-card>
+                      <ion-card-header  class="card-header"> 
+                        <ion-buttons>
+                          <button ion-button icon-only>
+                              <ion-icon name="information-circle" item-end></ion-icon>
+                          </button>
+                  
+                                <!-- edit with DB -->
+                        User U. User (Student)
+                        </ion-buttons>
+                  
+                      </ion-card-header>
+                      <ion-card-content>
+                        <div class="header-card-one">
+                        <ion-item> Last Acitivty: </ion-item>
+                        <ion-item> Today </ion-item>
+                        </div>
+                        <div class="header-card-two">
+                        <ion-item> Courses: </ion-item>
+                        <ion-item> 0 Completed </ion-item>
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+                  
+                    <ion-card>
+                      <ion-card-header class="card-header">
+                          <ion-buttons>
+                              <button ion-button icon-only>
+                                  <ion-icon name="list-box" item-end></ion-icon>
+                              </button>
+                        Active Modules
+                        <ion-badge item-end style="color:#f53d3d">3</ion-badge>
+                          </ion-buttons>
+                        
+                      </ion-card-header>
+                      
+                      <ion-card-content>
+                         <!-- edit with DB -->
+                          <ion-list>
+                              <button ion-item>
+                                IP Addressing
+                              </button>       
+                              <button ion-item>
+                                IPv4 Basic Subnetting
+                              </button>     
+                              <button ion-item>
+                                IPv4 Variable Length Subnetting
+                              </button>
+                          </ion-list>
+                      </ion-card-content>
+                    </ion-card>
+                  
+                    <ion-card>
+                      <ion-card-header  class="card-header">
+                          <ion-buttons>
+                              <button ion-button icon-only>
+                                  <ion-icon name="stats" item-end></ion-icon>
+                              </button>
+                        My Scores
+                          </ion-buttons>
+                      </ion-card-header>
+                  
+                      <ion-card-content>
+                        <ion-item> No Scores available yet </ion-item>
+                  
+                  
+                  
+                  
+                  
+                      </ion-card-content>
+                    </ion-card>
+              </ion-content>
