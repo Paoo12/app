@@ -10,9 +10,14 @@
      font-size: 19pt;
  }
  
-.slide
-{
-    height: 70%;
+ .custom-item {
+    width: 50%;
+    float: left;
+    height: 300px;
+    opacity: 0.6;
+  }
 
-}
-
+  .text
+  {
+      text-align: center;
+  }

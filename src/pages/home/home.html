@@ -19,88 +19,38 @@
 <ion-content padding style="background-image: url('../assets/img/bground.jpg');
 background-repeat: no-repeat;
 background-size: 100%;">
-<ion-card class="slide">
-<ion-slides pager >
-    
-      <ion-slide style="background-image: url(../assets/img/ipv4-1.jpg); background-repeat: no-repeat;background-size: cover;">
-      </ion-slide>
-    
-      <ion-slide style="background-image: url(../assets/img/ipv4-2.jpg); background-repeat: no-repeat;background-size: cover;">
- 
-      </ion-slide>
-    
-      <ion-slide style="background-image: url(../assets/img/ipv4-3.jpg); background-repeat: no-repeat;background-size: cover;">
-  
-      </ion-slide>
-      <ion-slide style="background-image: url(../assets/img/ipv4-4.jpg); background-repeat: no-repeat;background-size: cover;">
- 
-      </ion-slide>
-      <ion-slide style="background-image: url(../assets/img/ipv4-5.jpg);background-repeat: no-repeat;background-size: cover;">
- 
-      </ion-slide>
-    
-    </ion-slides>
-  </ion-card>
+<ion-list>
+<ion-item class="custom-item" (click)="move()">
+    <img src="../assets/img/act.png"/>
+    <hr>
+    <h3 class="text">Activity</h3>   
+</ion-item>
+<ion-item class="custom-item" (click)="move1()">
+  <img src="../assets/img/course.png"/>
+  <hr>
+  <h3 class="text">Courses</h3>   
+</ion-item>
+<ion-item class="custom-item" (click)="move2()">
+    <img src="../assets/img/quiz.png"/>
+    <hr>
+    <h3 class="text">Quizzes</h3>   
+</ion-item>
+<ion-item class="custom-item" (click)="move3()">
+    <img src="../assets/img/score.png"/>
+    <hr>
+    <h3 class="text">Scores</h3>     
+</ion-item>
+<ion-item class="custom-item" (click)="move4()">
+    <img src="../assets/img/calculator.png"/>
+    <hr>
+    <h3 class="text">Subnet Calculator</h3>    
+</ion-item>
+<ion-item class="custom-item" (click)="move5()">
+    <img src="../assets/img/bookmark.png"/>
+    <hr>
+    <h3 class="text">Bookmark</h3>    
+</ion-item>
 
-
-    <div class="row1">
-  <ion-grid> 
-    <ion-row>
-        <ion-col>
-          <button ion-button block color="light" (click)="move()">
-            <ion-icon name="list">
-            Activity
-            </ion-icon>
-          </button>
-        </ion-col>
-
-        <ion-col>
-          <button ion-button block color="light" (click)="move1()">
-              <ion-icon name="list-box">
-               Courses
-              </ion-icon>
-          </button>
-        </ion-col>
-
-        <ion-col>
-          <button ion-button block color="light" (click)="move2()">
-              <ion-icon name="create">
-                  Quizzes
-              </ion-icon>
-          </button>
-        </ion-col>   
-     </ion-row>
-
-     <ion-row>
-        <ion-col>
-          <button ion-button block color="light" (click)="move3()">
-              <ion-icon name="clipboard">
-                  Scores
-              </ion-icon>
-          </button>
-        </ion-col>
-
-        <ion-col>
-          <button ion-button block color="light" (click)="move4()">
-              <ion-icon name="calculator">
-                  IPv4 Calculator
-              </ion-icon>
-          </button>
-        </ion-col>
-
-        <ion-col>
-          <button ion-button block color="light" (click)="move5()">
-              <ion-icon name="bookmark">
-                  Bookmarks
-              </ion-icon>
-          </button>
-        </ion-col>
-     
-    </ion-row>
-   
-
- </ion-grid>
-</div>
-
+</ion-list>
  </ion-content>
 
