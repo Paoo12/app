@@ -6,7 +6,7 @@
         </button>
       </ion-buttons>
       <ion-title>
-        IPv4 Addressing
+        IPv4 Basic Subnetting
       </ion-title>
       <ion-buttons end>
       <button ion-button icon-only (click)="presentPopover($event)">
@@ -15,3 +15,235 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
+
+  <ion-content padding>
+    <ion-slides>
+      <ion-slide>
+        <div class="page2">
+          <h1>IPv4 Basic Subnetting</h1>
+          <hr>
+          <p>Subnetting is a process of dividing large network into the smaller networks based on layer 3 IP address. Every computer on network has an IP address that represent its location on network. Each IP class is equipped with its own default subnet mask which bounds that IP class to have prefixed number of Networks and prefixed number of Hosts per network. </p>
+          <p>Advantage of Subnetting</p>
+          <ul>
+            <li>
+              	Subnetting breaks large network in smaller networks and smaller networks are easier to manage.
+            </li>
+            <li>
+                Subnetting reduces network traffic by removing collision and broadcast traffic, that overall improve performance.
+            </li>
+            <li>
+                Subnetting allows you to apply network security polices at the interconnection between subnets.
+            </li>
+            <li>
+                Subnetting allows you to save money by reducing requirement for IP range.
+            </li>
+          </ul>
+
+
+        </div>
+      </ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>Class A Subnets</h2>
+    <p>In Class A, only the first octet is used as Network identifier and rest of three octets are used to be assigned to Hosts (i.e. 16777214 Hosts per Network). To make more subnet in Class A, bits from Host part are borrowed and the subnet mask is changed accordingly.</p>
+    <p>For example, if one MSB (Most Significant Bit) is borrowed from host bits of second octet and added to Network address, it creates two Subnets (21=2) with (223-2) 8388606 Hosts per Subnet.</p>
+    <p>The Subnet mask is changed accordingly to reflect subnetting. Given below is a list of all possible combination of Class A subnets:</p>
+    <img style="width:100%; height:80%;" src="../../assets/img/2-1pic.jpg"/>
+    <br>
+    <p>In case of subnetting too, the very first and last IP address of every subnet is used for Subnet Number and Subnet Broadcast IP address respectively. Because these two IP addresses cannot be assigned to hosts, sub-netting cannot be implemented by using more than 30 bits as Network Bits, which provides less than two hosts per subnet.</p>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>Class B Subnets</h2>
+    <p>By default, using Classful Networking, 14 bits are used as Network bits providing (214) 16384 Networks and (216-2) 65534 Hosts. Class B IP Addresses can be subnetted the same way as Class A addresses, by borrowing bits from Host bits. Below is given all possible combination of Class B subnetting:</p>
+    <img style="width:100%; height:80%;" src="../../assets/img/2-2pic.jpg"/>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>Class C Subnets</h2>
+    <p>Class C IP addresses are normally assigned to a very small size network because it can only have 254 hosts in a network. Given below is a list of all possible combination of subnetted Class B IP address:</p>
+    <img style="width:100%; height:80%;" src="../../assets/img/2-3pic.jpg"/>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <p>The table below summarizes the possible network numbers, the total number of each type, and the number of hosts in each Class A, B, and C network.</p>
+  <img style="width:100%; height:80%;" src="../../assets/img/2-4pic.png"/>
+  <br>
+  <p>Class A addresses begin with a 0 bit. Therefore, all addresses from 1.0.0.0 to 126.255.255.255 belong to class A (1=0000 0001; 126 = 0111 1110).
+      The 0.0.0.0 address is reserved for default routing and the 127.0.0.0 address is reserved for loopback testing so they don’t belong to any class.
+      
+      </p>
+      <p>Class B addresses begin with a 1 bit and a 0 bit. Therefore, all addresses from 128.0.0.0 to 191.255.255.255 belong to class B (128=1000 0000; 191 = 1011 1111). </p>
+      <p>Class C addresses begin with two 1 bits and a 0 bit. Class C addresses range from 192.0.0.0 to 223.255.255.255 (192 = 1100 0000; 223 = 1101 1111).</p>
+      <p>Class D and E are used for Multicast and Research purposes and we are not allowed to subnet them so they are not mentioned here.</p>
+      <p>Note: The number behind the slash notation (/) specifies how many bits are turned on (bit 1). For example:</p>
+      <ul>
+        <li>
+            “/8” equals “1111 1111.0000 0000.0000 0000.0000 0000” -> 8 bits are turned on (bit 1)
+        </li>
+        <li>
+            “/12” equals “1111 1111.1111 0000.0000 0000.0000 0000” -> 12 bits are turned on (bit 1)
+        </li>
+        <li>
+            “/28” equals “1111 1111.1111 1111.1111 1111.1111 0000” -> 28 bits are turned on (bit 1)
+        </li>
+        <li>
+            “/32” equals “1111 1111.1111 1111.1111 1111.1111 1111” -> 32 bits are turned on (bit 1) and this is also the maximum value because all bits are turned on.
+        </li>
+      </ul>
+<p>The slash notation (following with a number) is equivalent to a subnet mask. If you know the slash notation you can figure out the subnet mask and vice versa. For example, “/8” is equivalent to “255.0.0.0”; “/12” is equivalent to “255.240.0.0”; “/28” is equivalent to “255.255.255.240”; “/32” is equivalent to “255.255.255.255”.</p>
+
+</ion-slide>
+
+<ion-slide>
+<div class="page2">
+  <h2>How to subnet?</h2>
+  <p>example with the IP 11.0.0.1, we will write all numbers in binary form to reveal what a computer really sees in an IP address.</p>
+  <img style="width:100%; height:80%;" src="../../assets/img/2-5pic.jpg"/>
+  <br>
+  <p>Now you can clearly see that the subnet mask will decide which is the Network part, which is the Host part. By borrowing 8 bits, our subnet mask will be like this:</p>
+  <img style="width:100%; height:80%;" src="../../assets/img/2-6pic.jpg"/>
+  <br>
+  <p>After changing the second octet of the subnet mask from all “0” to all “1”, the Network part is now extended. Now we can create new networks by changing number in the first or second octet. This greatly increases the number of networks we can create. With this new subnet mask, IP 11.1.0.1 is in different network from IP 11.0.0.1 because “1” in the second octet now belongs to the Network part.</p>
+  <p>So, in conclusion we “subnet” by borrowing bit “0” in the Host portion and converting them to bit “1”. The number of borrowed bits is depended on how many networks we need.</p>
+<p>Note: A rule of borrowing bits is we can only borrow bit 0 from the left to the right without skipping any bit 0. For example, you can borrow like this: “1111 1111. 1100 0000.0000 0000.0000 0000” but not this: “1111 1111. 1010 0000.0000 0000.0000 0000”. In general, just make sure all your bit “1”s are successive on the left and all your bit “0”s are successive on the right.</p>
+
+
+</div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>Calculate how many networks and hosts-per-subnet</h2>
+    <p>In our example, you may raise a question: “when we borrow 8 bits, how many sub-networks and how many hosts per sub-network do it create?”</p>
+    <p>Because we can change any bit in the second octet to create a new subnet, each bit can be “0” or “1” so with this subnet mask (255.255.0.0) we can create 2<sup>8</sup> more subnets. From here we can deduce the formula to calculate the newly created subnets. Suppose n is the number of bits we borrow:</p>
+    <p>The number of newly created subnets = 2<sup>n</sup></p>
+    <p>In our example, we borrow 8 bits so we will have 2<sup>n</sup> = 2<sup>8</sup> = 256 subnets</p>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>How Many Hosts per Subnet</h2>
+    <p>The number of hosts per subnet is depended on the Host part, which is indicated by the “0” part of the subnet mask. So suppose k is the number of bits “0” in the subnet mask. The formula to calculate the number of hosts is 2<sup>k</sup>. But notice that with each subnet, there are two addresses we can’t assign for hosts because they are used for network address and broadcast address. Thus we must subtract the result to 2. Therefore the formula should be:</p>
+    <p>The number of hosts per subnet = 2<sup>k</sup> – 2</p>
+    <br>
+    <p>In our example, the number of bit “0” in the subnet mask 255.255.0.0 (in binary form) is 16 so we will have 2<sup>k</sup> – 2 = 216 – 2 = 65534 hosts-per-subnet</p>
+
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <p>Example:</p>
+    <p>Your company has just been assigned the network 4.0.0.0. How many subnets and hosts-per-subnet you can create with a subnet mask of 255.255.255.0?</p>
+    <p>First of all you have to specify which class this network belongs to. According to Table 1, it belongs to class A (simply, class A ranges from 1 to 126) and its default subnet mask is 255.0.0.0. Therefore if we use a subnet mask of 255.255.255.0, it means we borrowed 16 bits (to convert from 0 to 1).</p>
+    <br>
+    <p>255.0.0.0 = 1111 1111.0000 0000.0000 0000.0000 0000</p>
+    <p>255.255.255.0 = 1111 1111.1111 1111.1111 1111.0000 0000</p>
+    <br>
+    <p>Now use our above formulas to find the answers:</p>
+    <p>The number of newly created subnets = 2<sup>16</sup> = 65536 (with 16 is the borrowed bits)</p>
+    <p>The number of hosts per subnet = 2<sup>8</sup> – 2 = 254 (with 8 is the bit “0”s left in the 255.255.255.0 subnet mask)</p>
+
+  </div>
+</ion-slide>
+
+
+<ion-slide>
+  <div class="page2">
+    <h2>Subnetting – The quick and easy way</h2>
+    <p>One important thing we should notice is that a valid subnet mask must have all bit “1”s and “0”s successive, in which bit “1”s must be on the left; bit “0”s must be on the right. Therefore we only have 8 situations:</p>
+    <img style="width:100%; height:80%;" src="../../assets/img/2-8pic.jpg"/>
+    <br>
+    <p>This is a very important table to do subnet quickly! Please take some time to learn it by heart. Make sure you remember the right-most bit “1” position (the least significant bit 1, which are in red in the above table) and their equivalent decimal values.</p>
+    <p>In most cases, this table is used to quickly convert a number from decimal to binary value without any calculation. For example, you can quickly convert the 4th octet of the subnet mask 255.255.255.248 to 1111<span style="text-decoration: underline;">1</span>000. Or if you are given a subnet of /29 you will know it equals to 255.255.255.248 (by thinking “/24 is the default subnet mask of class C so /29 will have the right-most bit “1” at 5th position).</p>
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <p>Example Questions:</p>
+    <ol type="1">
+      <li>“/28” in binary form?</li>
+      <li>“255.255.224.0” in binary form?</li>
+      <li>“255.192.0.0” in slash notation form?</li>
+      <li>“/26” in binary form?</li>
+      <li>“255.128.0.0” in binary form?</li>
+      <li>“248.0.0.0” in slash notation form?</li>
+    </ol>
+
+
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <p>Answers:</p>
+    <ol type="1">
+      <li>/28 -> 1111 1111.1111 1111.1111 1111.111<span style="text-decoration: underline;">1</span> 0000</li>
+      <li>255.255.224.0 -> 1111 1111.1111 1111.11<span style="text-decoration: underline;">1</span>0 0000.0000 0000</li>
+      <li>255.192.0.0 -> /10</li>
+      <li>/26 -> 1111 1111.1111 1111.1111 1111.1<span style="text-decoration: underline;">1</span>00 0000</li>
+      <li> 255.128.0.0 -> 1111 1111.1000 0000.0000 0000.0000 0000</li>
+      <li>248.0.0.0 -> /5</li>
+    </ol>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>How to find out the increment number?</h2>
+    <p>The increment is the heart of subnetting; if you can find out the increment, you can find all the information to solve a subnetting question. So it is usually the first thing you must find out in a subnetting question.</p>
+    <p>The increment number is the number specifying how “big” your subnets are. By changing bits in the Network part, we found out 4 subnets:</p>
+    <br>
+    <p>There are 2 popular ways to find out the increment number</p>
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>1.) Use The Formula</h2>
+    <p>Increment = 256 – x</p>
+    <br>
+    <p>In which “x” is the first octet (counting from the left) which is smaller than 255 in a subnet mask. For example:</p>
+    <ul>
+      <li>In a subnet mask of 255.224.0.0 -> x = 224</li>
+      <li>In a subnet mask of /29 -> x = 248 (because /29 = 255.255.255.248)</li>
+      <li>In a subnet mask of 1111 1111.1111 1100.0000 0000.0000 0000 -> x = 252</li>
+    </ul>
+
+    <p>In the case you see a subnet mask of 255.255.255.255 (which is very rare in CCNA), x = 255</p>
+
+    <p>Note: Also remember which octet “x” belongs to because we have to plus the increment to that octet.</p>
+
+
+  
+  
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page2">
+    <h2>2.) Learn by heart the decimal value of the rightmost bit “1” in the subnet mask:</h2>
+    <p>Another way to find the increment value is to write “x” in binary: 11110000. Consider the rightmost bit “1”, the decimal value of this bit is the increment value. In this case it equals to 16.</p>
+    <p>The table below summarizes the decimal values of bit “1” depending on its position. To use this method, you should learn by heart this table:</p>
+    <img style="width:100%; height:80%;" src="../../assets/img/2-9pic.jpg"/>
+  </div>
+</ion-slide>
+
+
+
+
+    </ion-slides>
+  </ion-content>

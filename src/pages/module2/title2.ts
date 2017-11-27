@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { PopoverPage } from '../popover/popover';
+import { P2Page } from '../module2/page2/page2';
 
 @Component({
   selector: 'page-title2',
@@ -20,4 +21,7 @@ export class Title2Page {
     });
   }
 
+  start(){
+    this.navCtrl.push(P2Page);
+    }
 }
