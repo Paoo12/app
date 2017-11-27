@@ -15,6 +15,11 @@ import { Title2Page } from '../pages/module2/title2';
 import { Title3Page } from '../pages/module3/title3';
 import { Title4Page } from '../pages/module4/title4';
 import { Title5Page } from '../pages/module5/title5';
+import { P1Page } from '../pages/module1/page1/page1';
+import { P2Page } from '../pages/module2/page2/page2';
+import { P3Page } from '../pages/module3/page3/page3';
+import { P4Page } from '../pages/module4/page4/page4';
+import { P5Page } from '../pages/module5/page5/page5';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { Title5Page } from '../pages/module5/title5';
     Title3Page,
     Title4Page,
     Title5Page,
+    P1Page,
+    P2Page,
+    P3Page,
+    P4Page,
+    P5Page,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +57,11 @@ import { Title5Page } from '../pages/module5/title5';
     Title3Page,
     Title4Page,
     Title5Page,
+    P1Page,
+    P2Page,
+    P3Page,
+    P4Page,
+    P5Page,
   ],
   providers: [
     StatusBar,

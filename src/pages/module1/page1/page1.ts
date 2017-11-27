@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PopoverPage } from '../popover/popover';
+import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
-import { P1Page } from '../module1/page1/page1';
+
 
 @Component({
-  selector: 'page-title',
-  templateUrl: 'title.html'
+  selector: 'page-page1',
+  templateUrl: 'page1.html'
 })
-export class TitlePage {
+export class P1Page {
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
 
@@ -21,9 +21,5 @@ export class TitlePage {
     });
   }
 
-  start()
-  {
-
-  }
 
 }
