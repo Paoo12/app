@@ -23,7 +23,7 @@ export class TitlePage {
 
   start()
   {
-
+    this.navCtrl.push(P1Page);
   }
 
 }

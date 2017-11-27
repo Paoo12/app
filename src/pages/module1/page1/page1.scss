@@ -1,0 +1,16 @@
+.page1
+{
+    text-align: justify;
+    overflow-y: auto;
+    // height: 100%;
+    // width: 100%;
+    // display: block;
+}
+
+ion-slide {
+    .slide-zoom 
+    {
+    height: 100%;
+    overflow-y: auto;
+    }
+}

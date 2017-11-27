@@ -15,4 +15,340 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
+
+  <ion-content padding>
+    <ion-slides>
+      <ion-slide>
+   
+      <div class="page1">       
+      <h1 class="page1-title">IP Addressing</h1>
+      <hr>
+      <p>IP address is an address having information about how to reach a specific host, especially outside the LAN. It is also used to uniquely identify a device on an IP network. An IP address is a 32 bit unique address having an address space of 232. </p>
+      <p>The 32 binary bits are:</p>
+      <br>
+      <ul>
+        <li>
+          Divided into a network portion and host portion
+        </li>
+        <br>
+        <li>Broken into four octets (1 octet = 8 bits). Each octet is converted to decimal and separated by a period (dot). For this reason, an IP address is said to be expressed in dotted decimal format (for example, 172.16.81.100)</li>
+      </ul>
+    </div>
+
+      </ion-slide>
+
   
+   <ion-slide>
+     <div class="page1">
+       <p>Consider this IP address, which is presented in dotted decimal: 10.10.16.1.<br>
+          The address breaks down into the following octets:
+          </p>
+        
+        <ul>
+          <li>
+            10
+          </li>
+          <li>
+            10
+          </li>
+          <li>
+            16
+          </li>
+          <li>
+            1
+          </li>
+        </ul>
+        <p>The value in each octet ranges from 0 to 255 decimal, or 00000000–11111111 binary. <br>In binary, the address 10.10.16.1 is represented as: 0000101
+            0.00001010.00010000.00000001.
+            </p>
+          
+          <p>Here is how binary octets convert to decimal: The right most bit, or least significant bit, of an octet will hold a value of 20. The bit just to the left of that will hold a value of 21. This continues until the left−most bit, or most significant bit, which will hold a value of 27. So if all binary bits are a one, the decimal equivalent would be 255 as shown on the next slide.</p>
+        </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+        <img style="width:100%; height:80%;" src="../../assets/img/1-1pic.png"/>
+        <p>128+64+32+16+8+4+2+1=255</p>
+        <br>
+        <p>Here is a sample octet conversion when not all of the bits are set to 1.</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-2pic.png"/>
+        <br>
+        <p>0+64+0+0+0+0+0+1=65</p>
+        <p>And this is sample shows an IP address represented in both binary and decimal.</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-3pic.png"/>
+        <br>
+        <p>These octets are broken down to provide an addressing scheme that can accommodate large and small
+            networks.
+            </p>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <p>Generally, there are two notations in which IP address is written, dotted decimal notation and hexadecimal notation.</p>
+ 
+       <p>Dotted Decimal Notation</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-4pic.jpg"/>
+       <br>
+      <p>Hexadecimal Notation</p>
+      <img style="width:100%; height:80%;" src="../../assets/img/1-5pic.jpg"/>
+<br>
+      <p>Some points to be noted about dotted decimal notation: </p>
+      <ol type="1">
+        <li>
+           The value of any segment (byte) is between 0 and 255 (both included).
+          </li>
+          <li>
+           There are no zeroes preceding the value in any segment (054 is wrong, 54 is correct).
+          </li>
+          </ol>
+      </div>
+   </ion-slide>
+
+
+   <ion-slide>
+     <div class="page1">
+       <h2>TCP/IP</h2>
+       <p>A majority of the internet uses a protocol suite called the Internet Protocol Suite also known as the TCP/IP protocol suite. This suite is a combination of protocols which encompasses a number of different protocols for different purpose and need. Because the two major protocols in this suites are TCP (Transmission Control Protocol) and IP (Internet Protocol), this is commonly termed as TCP/IP Protocol suite. </p>
+        <br><h2>Internet Protocol Version 4 (IPv4)</h2>
+        <p>Internet Protocol is one of the major protocols in the TCP/IP protocols suite. This protocol works at the network layer of the OSI model and at the Internet layer of the TCP/IP model. Thus this protocol has the responsibility of identifying hosts based upon their logical addresses and to route data among them over the underlying network. </p>
+        <p>IP provides a mechanism to uniquely identify hosts by an IP addressing scheme. IP uses best effort delivery, i.e. it does not guarantee that packets would be delivered to the destined host, but it will do its best to reach the destination. Internet Protocol version 4 uses 32-bit logical address.</p>
+        <p>IPv4 supports three different types of addressing modes.</p>
+        <br><h2>Classless Inter-Domain Routing (CIDR)</h2>
+        <p> is a simplified method of representing a subnet mask. CIDR identifies the number of binary bits set to a 1 (or on) in a subnet mask, preceded by a slash. For example, a subnet mask of 255.255.255.240 would be represented as follows in binary: 11111111.11111111.11111111.11110000 </p>
+        <p>The first 28 bits of the above subnet mask are set to 1. The CIDR notation for this subnet mask would thus be /28. The CIDR mask is often appended to the IP address. For example, an IP address of 192.168.1.1 and a subnet mask of 255.255.255.0 would be represented as follows using CIDR notation:</p>
+        <p>192.168.1.1 /24</p>
+     </div>
+   </ion-slide>
+   <ion-slide>
+     <div class="page1">
+       <h2>Unicast Addressing Mode </h2>
+       <p>In this mode, data is sent only to one destined host. The Destination Address field contains 32-bit IP address of the destination host. Here the client sends data to the targeted server:</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-6pic.jpg"/>
+       <br>
+       <h2>Broadcast Addressing Mode </h2>
+        <p>In this mode, the packet is addressed to all the hosts in a network segment. The Destination Address field contains a special broadcast address, i.e. 255.255.255.255. When a host sees this packet on the network, it is bound to process it. Here the client sends a packet, which is entertained by all the Servers:</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-7pic.jpg"/>
+        <br>
+        <h2>Multicast Addressing Mode</h2>
+        <p>This mode is a mix of the previous two modes, i.e. the packet sent is neither destined to a single host nor all the hosts on the segment. In this packet, the Destination Address contains a special address which starts with 224.x.x.x and can be entertained by more than one host.</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-8pic.jpg"/>
+        <br>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h3>Hierarchical Addressing Scheme </h3>
+        <p>IPv4 uses hierarchical addressing scheme. An IP address, which is 32-bits in length, is divided into two or three parts as depicted:</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-9pic.jpg"/>
+        <br>
+        <p>A single IP address can contain information about the network and its sub-network and ultimately the host. This scheme enables the IP Address to be hierarchical where a network can have many sub-networks which in turn can have many hosts.</p>
+        <br>
+        <h2>Subnet Mask </h2>
+        <p>The 32-bit IP address contains information about the host and its network. It is very necessary to distinguish both. For this, routers use Subnet Mask, which is as long as the size of the network address in the IP address. Subnet Mask is also 32 bits long. If the IP address in binary is ANDed with its Subnet Mask, the result yields the Network address. For example, say the IP Address is 192.168.1.152 and the Subnet Mask is 255.255.255.0 then:</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-10pic.jpg"/>
+        <br>
+        <p>This way the Subnet Mask helps extract the Network ID and the Host from an IP Address. It can be identified now that 192.168.1.0 is the Network number and 192.168.1.152 is the host on that network.</p>
+        <br>
+        <h2>Binary Representation </h2>
+        <p>The positional value method is the simplest form of converting binary from decimal value. IP address is 32-bit value which is divided into 4 octets. A binary octet contains 8 bits and the value of each bit can be determined by the position of bit value '1' in the octet.</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-11pic.jpg"/>
+        <br>
+        <p>Positional value of bits is determined by 2 raised to power (position – 1), that is the value of a bit 1 at position 6 is 26-1 that is 25 that is 32. The total value of the octet is determined by adding up the positional value of bits. The value of 11000000 is 128+64 = 192. Some examples are shown in the table below:</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-12pic.jpg"/>
+        <br>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+      <h2>IP Address Classes</h2>
+      <p>IP addresses are split up into several different categories, including Class A, B, C, D (Multicast), and E (Reserved). Address classes are defined, in part, based on the number of bits that make up the network portion of the address, and in turn, on how many are left for the definition of individual host addresses.</p>
+      <p>The order of bits in the first octet determine the classes of IP address.</p>
+      <p>IPv4 address is divided into two parts:</p>
+      <ul>
+        <li>
+        	Network ID
+        </li>
+        <li>
+          Host ID
+        </li>
+      </ul>
+      <br>
+      <p>The class of IP address is used to determine the bits used for network ID and host ID and the number of total networks and hosts possible in that particular class. Each ISP or network administrator assigns IP address to each device that is connected to its network.</p>
+      <img style="width:100%; height:80%;" src="../../assets/img/1-13pic.jpg"/>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h2>Class A</h2>
+       <p>IP address belonging to class A are assigned to the networks that contain a large number of hosts.</p>
+       <ul>
+         <li>
+            The network ID is 8 bits long.
+         </li>
+         <li>
+            The host ID is 24 bits long.
+         </li>
+       </ul>
+       <br>
+       <p>The higher order bits of the first octet in class A is always set to 0. The remaining 7 bits in first octet are used to determine network ID. The 24 bits of host ID are used to determine the host in any network. The default sub-net mask for class A is 255.x.x.x. Therefore, class A has a total of:</p>
+       <ul>
+         <li>
+        	2^7 – 2 = 126 network ID
+         </li>
+         <li>
+          2^24 – 2 = 16,777,214 host ID
+          </li>
+
+       </ul>
+       <p>IP addresses belonging to class A ranges from 1.x.x.x – 126.x.x.x</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-14pic.jpg"/>
+
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h2>Class B</h2>
+       <p>IP address belonging to class B are assigned to the networks that ranges from medium-sized to large-sized networks.</p>
+       <ul>
+          <li>
+             The network ID is 16 bits long.
+          </li>
+          <li>
+             The host ID is 16 bits long.
+          </li>
+        </ul>
+        <br>
+        <p>The higher order bits of the first octet of IP addresses of class B are always set to 10. The remaining 14 bits are used to determine network ID. The 16 bits of host ID is used to determine the host in any network. The default sub-net mask for class B is 255.255.x.x. Class B has a total of:</p>
+        <ul>
+          <li>
+            2^14 = 16384 network address
+          </li>
+          <li>
+            	2^16 – 2 = 65534 host address
+          </li>
+        </ul>
+        <br>
+        <p>IP addresses belonging to class B ranges from 128.0.x.x – 191.255.x.x.</p>
+        <img style="width:100%; height:80%;" src="../../assets/img/1-15pic.jpg"/>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h2>Class C</h2>
+       <p>IP address belonging to class C are assigned to small-sized networks.</p>
+       <ul>
+         <li>
+            The network ID is 24 bits long.
+         </li>
+         <li>
+            The host ID is 8 bits long.
+         </li>
+       </ul>
+       <br>
+       <p>The higher order bits of the first octet of IP addresses of class C are always set to 110. The remaining 21 bits are used to determine network ID. The 8 bits of host ID is used to determine the host in any network. The default sub-net mask for class C is 255.255.255.x. Class C has a total of:</p>
+       <ul>
+         <li>
+            2^21 = 2097152 network address
+         </li>
+         <li>
+            2^8 – 2 = 254 host address
+         </li>
+       </ul>
+       <p>IP addresses belonging to class C ranges from 192.0.0.x – 223.255.255.x.</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-16pic.jpg"/>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h2>Class D</h2>
+       <p>IP address belonging to class D are reserved for multi-casting. The higher order bits of the first octet of IP addresses belonging to class D are always set to 1110. The remaining bits are for the address that interested hosts recognize.</p>
+       <p>Class D does not posses any sub-net mask. IP addresses belonging to class D ranges from 224.0.0.0 – 239.255.255.255.</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-17pic.jpg"/>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+       <h2>Class E</h2>
+       <p>IP addresses belonging to class E are reserved for experimental and research purposes. IP addresses of class E ranges from 240.0.0.0 – 255.255.255.254. This class doesn’t have any sub-net mask. The higher order bits of first octet of class E are always set to 1111.</p>
+       <img style="width:100%; height:80%;" src="../../assets/img/1-18pic.jpg"/>
+     </div>
+   </ion-slide>
+
+   <ion-slide>
+     <div class="page1">
+     <h2>
+        Range of special IP addresses:
+     </h2>
+     <ul>
+       <li>
+          169.254.0.0–169.254.0.16: Link local addresses
+       </li>
+       <li>
+          127.0.0.0 – 127.0.0.8: Loop-back addresses
+       </li>
+       <li>
+          0.0.0.0 – 0.0.0.8 : used to communicate within the current network.
+       </li>
+     </ul>
+
+     <br>
+     <h2>
+        Rules for assigning Host ID:
+     </h2>
+     <p>Host ID’s are used to identify a host within a network. The host ID are assigned based on the following rules:</p>
+     <ul>
+       <li>
+          Within any network, the host ID must be unique to that network.
+       </li>
+       <li>
+          	Host ID in which all bits are set to 0 cannot be assigned because this host ID is used to represent the network ID of the IP address.
+       </li>
+       <li>
+          	Host ID in which all bits are set to 1 cannot be assigned because this host ID is reserved as a broadcast address to send packets to all the hosts present on that particular network.
+       </li>
+     </ul>
+
+     <br>
+     <h2>Rules for assigning Network ID:</h2>
+     <p>Hosts that are located on the same physical network are identified by the network ID, as all host on the same physical network are assigned the same network ID. The network ID is assigned based on the following rules:</p>
+     <ul>
+       <li>
+          	The network ID cannot start with 127 because 127 belongs to class A address and is reserved for internal loop-back functions.
+       </li>
+       <li>
+          	All bits of network ID set to 1 are reserved for use as an IP broadcast address and therefore, cannot be used.
+       </li>
+       <li>
+          	All bits of network ID set to 0 are used to denote a specific host on the local network and are not routed and therefore, aren’t used.
+       </li>
+     </ul>
+    </div>
+   </ion-slide>
+   <ion-slide>
+     <h2>Summary of Address Classes:</h2>
+     <img style="width:100%; height:80%;" src="../../assets/img/1-18pic.jpg"/>
+   </ion-slide>
+
+
+
+
+
+
+
+    </ion-slides>
+
+
+
+
+
+
+  </ion-content>
