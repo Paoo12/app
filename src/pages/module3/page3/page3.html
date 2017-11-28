@@ -6,7 +6,7 @@
         </button>
       </ion-buttons>
       <ion-title>
-        IPv4 Addressing
+        IPv4 Variable Length Subnetting
       </ion-title>
       <ion-buttons end>
       <button ion-button icon-only (click)="presentPopover($event)">
@@ -15,3 +15,244 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
+
+  <ion-content padding>
+
+    <ion-slides>
+      <ion-slide>
+        <div class="page3">
+          <h1>IPv4 Variable Length Subnetting</h1>
+          <hr>
+          <p>Variable Length Subnet Mask (VLSM):  is a numerical masking sequence, or IP address subset, based on overall network requirements. A VLSM allows a network administrator to use long masks for networks with few hosts and short masks for networks with multiple hosts. A VLSM is used with a VLSM router and must have routing protocol support.
+            A VLSM is also known as a classless Internet Protocol (IP) address.
+            </p>
+            <p>
+              VLSM enables you to have more than one mask for a given class of address, albeit a class A, B, or C network number.
+            </p>
+            <p>
+              VLSM, originally defined in RFC 1812, allows you to apply different subnet masks to the same class address space Classful protocols, such as RIPv1 and IGRP, do not support VLSM. To deploy VLSM requires a routing protocol that is classless—BGP, EIGRP, IS-IS, OSPF, or RIPv2, for instance.
+            </p>
+            <p>
+              VLSM provides Two major advantages:
+            </p>
+
+            <ul>
+              <li>
+                more efficient use of addressing
+              </li>
+              <li>
+                Ability to perform route summarization
+              </li>
+            </ul>
+
+            <p>when you perform classful subnetting, all subnets have the same number of hosts because they all use the same subnet mask. This leads to inefficiencies. For example, if you borrow 4 bits on a Class C network, you end up with 14 valid subnets of 14 valid hosts. A serial link to another router only needs 2 hosts, but with classical subnetting, you end up wasting 12 of those hosts. Even with the ability to use NAT and private addresses, where you should never run out of addresses in a network design, you still want to ensure that the IP plan that you create is as efficient as possible.</p>
+            <p>
+              Variable Length Subnet Masking (VLSM) is a way of further subnetting a subnet. Using Variable Length Subnet Masking (VLSM) we can allocate IPv4 addresses to the subnets by the exact need. Variable Length Subnet Masking (VLSM) allows us to use more than one subnet mask within the same network address space. If we recollect from the previous lessons, we can divide a network only into subnets with equal number of IPv4 addresses. Variable Length Subnet Masking (VLSM) allows to create subnets from a single network with unequal number of IPv4 addresses.
+            </p>
+
+ 
+ 
+          </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <p>
+            let’s take a look at the unsubnetted network topology from the scenario we’re going to be working with:
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/3-1pic.jpg"/>
+          <br>
+          <p>
+            all 106 users in this network are on the same, single broadcast domain, any computer on any department can reach every other computer and there is one single point of failure which is Switch1 in the middle of the topology.
+          </p>
+          <p>
+            before we move on to the actual practice, there are a couple of concepts that you need to take into consideration when working a subnetting scenario, They are:
+          </p>
+
+          <ul>
+            <li>	
+            Future growth space (Expandability).
+            <br>
+            When subnetting, you need to allocate space, not only for the number of current users, but also for any expected future growth (both users and/or network equipment).
+            </li>
+            <li>
+                Router Topology:
+                <br>
+                The most common will be point-to-point links between routers, but whichever the case, you will need to allocate address space for them as well, for example, each point-to-point link is a single, 2 users subnet.
+
+            </li>
+          </ul>
+
+
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>Practice</h2>
+          <p>
+              You are in charge of a network that allows a total of 254 (256-2) users (192.168.10.0/24), but the company has a total of 106 employees; 4 in HR, 4 in Accounting, 2 in Legal, 11 in IT, 55 in Sales and 30 in the Warehouse. You need to create subnets that would allow for these number of users and prevent the waste of IP addresses as much as possible.
+          </p>
+          <hr>
+          <hr>
+          <p>The scenario tells us that we need to create subnets that would allow a specific number of users, so in this particular scenario, we should end up with a total of 6 subnets, and each should allow the indicated number of users</p>
+          <img style="width:100%; height:80%;" src="../../assets/img/3-2pic.png"/>
+          <br>
+          <p>The picture above shows the new topology after VLSM subnetting.
+              let’s find out how we got there.
+              </p>
+
+          
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h3>Subnetting is accomplished in 6 steps:</h3>
+          <h2>1. Organize subnets.</h2>
+          <p>Always start with highest number of users needed, so organize the subnets in descending order (highest to lowest).</p>
+          <ul>
+            <li>
+              Sales = 55
+            </li>
+            <li>
+              Warehouse = 30
+            </li>
+            <li>
+              IT = 11
+            </li>
+
+            <li>
+              Acc. = 4
+            </li>
+            <li>
+              HR = 4
+            </li>
+            <li>
+              Legal = 2
+            </li>
+            <li>
+              R1-R2 = 2
+            </li>
+            <li>
+              R2-R3 = 2
+            </li>
+            <li>
+              R3-R1 = 2
+            </li>
+          </ul>
+
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>2. Add the number of users needed, to the number of addresses needed for future growth, and convert the result to binary:</h2>
+          <p>In this case, because these is the Sales subnet, the expected growth is high, so we are going to leave plenty of room, say 60 addresses. So:</p>
+          <br>
+          <p>55 users + 60 for future growth= 115</p>
+          <p>115 = <span style="text-decoration: underline;">1</span>110011</p>
+          <br>
+          <p>Here is the number of bits needed to get to decimal 115. This means that you don’t even have to convert the whole number, once you find the first bit (the underlined 1 in this case), you can just count the remaining bits. So, 7 bits are needed to get to decimal 115.</p>
+
+        
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>3. Convert the classfull (un-subnetted) mask to binary:</h2>
+          <p>255.255.255.0 = 11111111 11111111 1111111 00000000</p>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>4. On the binary mask, reserve the number of bits needed and turn any remaining host bits into network bits (from 0 to 1):</h2>
+          <p>Number of bits from step 2: 7 bits, so:</p>
+          <p>11111111 11111111 1111111 <span style="color: blue;">0</span><span style="color: green;">0000000</span></p>
+          <p>The 7 green 0s are the reserved bits, and the remaining blue o turns into a network bit, a 1.</p>
+          <p>11111111 11111111 1111111 <span style="color: red;">1</span><span style="color: green;">0000000</span></p>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>5. Find the interesting octet and Increment.</h2>
+          <p>the last network bit on the new mask -the red 1-, tells you in which octet we are going to do the subnetting, as well as the increment.</p>
+          <p>Interesting Octet: 4th<br>
+              Increment: 128
+             </p>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <h2>6. Find the range.</h2>
+          <p>Always starting from 0 for the first subnet, add the increment which is 128, </p>
+          <p>192.168.10.0<br>
+              192.168.10.128
+              </p>
+
+              <p>But please know, and this might be tricky, that these two addresses are actually the first addresses of two separate subnets, so 192.168.10.o is the first address of one subnet (the first subnet which will be the Sales subnet), and 192.168.10.128 is the first address of the next subnet.
+                  <br>In other words, the first subnets goes from 192.168.10.0 to 192.168.10.127, and the second subnet starts at 192.168.10.128. Like this:
+                  </p>
+                  <img style="width:100%; height:80%;" src="../../assets/img/3-3pic.png"/>
+            
+        </div>
+
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page3">
+          <p>We do not know the usable addresses nor the broadcast address of the second subnet, because we haven’t subnetted it yet. However, we do know which is the first address of the second subnet, and that is the address we are going to start from to get our second subnet (Warehouse).</p>
+          <p>For the second subnet, the Warehouse subnet, we are looking for 30 users, and since the warehouse employees will provably grow as well, we are going to leave 30 more addresses, so:</p>
+
+          <br>
+          <p>1.	Add needed addresses and extra addresses:<br>
+              30 + 30= 60 addresses
+              </p>
+              <p>2.	Convert to binary:<br>
+                  60 in binary is 111100<br>
+                  6 bits are needed
+                  </p>
+                  <p>3.	Reserve the bits:<br>
+                      11111111 11111111 1111111 00000000
+                      </p>
+                      <p>4.	Turn the two remaining hosts bits to network bits (0 to 1)<br>
+                          11111111 11111111 1111111 11000000
+                          </p>
+                          <p>5.	Last network bit is the increment:<br>
+                              Increment is 64
+                              </p>
+                              <p>6.	Find the range (starting from the 1st address of the second subnet, the one we found earlier, the 192.168.10.128 address:</p>
+                              <p>192.168.10.128 ← Start of the Warehouse subnet.</p>
+                              <p>192.168.10.192 ← Start of the next subnet.<br>
+                                  so, the Warehouse subnet goes from 192.168.10.128 to 192.168.10.191.
+                                  </p>
+        </div>
+      </ion-slide>
+
+
+      <ion-slide>
+        <div class="page3">
+          <p>The Completed Subnet should look like this:</p>
+          <img style="width:100%; height:80%;" src="../../assets/img/3-4pic.png"/>
+          <br>
+          <img style="width:100%; height:80%;" src="../../assets/img/3-5pic.png"/>
+          <br>
+          <img style="width:100%; height:80%;" src="../../assets/img/3-6pic.png"/>
+        </div>
+      </ion-slide>
+
+
+
+
+
+
+    </ion-slides>
+  </ion-content>

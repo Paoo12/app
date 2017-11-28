@@ -15,3 +15,132 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
+
+  <ion-content padding>
+    <ion-slides>
+      <ion-slide>
+        <div class="page4">
+          <h1>IPv4 Supernetting</h1>
+          <hr>
+          <p>Supernetting combines two smaller blocks of contiguous IP addresses together into a continuous range of addresses that form a larger super-net. You create a supernet whenever you need to aggregate blocks of IP addresses together. The two most common situation where you would create and use a supernet are:</p>
+          <ul>
+            <li>
+                Expanding the number of hosts in a local area network
+            </li>
+            <li>
+                Aggregating several routes to a contiguous block of IP addresses, into a single route announcment
+            </li>
+          </ul>
+
+          <p>
+              The term supernetting stems from the idea that at one time there were 'classes' of IP addresses and that certain classes of addresses were a certain size. By adding two sets of addresses of one size using supernetting, you created a larger set of addresses that contained both of the smaller classful subnets.
+          </p>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page4">
+          <p>
+              Classful addressing identifies a class C addresses as being in the range of 192.0.0.0 through 223.255.255.255, and each "Class C" contains 256 addresses. Address classes was a system that predates subnet masks, so technically speaking, there's no such thing as a "Class C mask", but the term "Class C" is so misused and the concept of classful addresses is so old that the term "Class C" is synonymous with a block of 256 addresses even when the first octet is outside the 192-223 range. A single address block such as 192.168.1.0 - 192.168.1.255 has 256 addresses, but the first address is used for the network and the second is used for the broadcast address.  The remaining 254 addresses can be used for computers. If you have more than 254 computers that need to be on the same network (to get Windows Domain Browsing working for instance). then you need to create a supernet
+          </p>
+
+          <p>You may recall that every IP address contains a host portion that identifies the individual host and a network portion that identifies which network the host is attached to. Under the classful addressing scheme, no masks are needed. The address itself describes which part of the IP address is the network portion and which part of the address is the host portion.</p>
+          <p>The idea of supernetting is the idea of borrowing one or more bits from the network portion of the IP address and using it to create a larger set of hosts.</p>
+
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page4">
+        <h2>
+            Supernetting Example:
+        </h2>
+        <p>
+            Expand the following network so that there are twice the number of hosts as before, and identify the new network and broadcast addresses.
+        </p>
+        <p>
+            192.168.0.0 / 255.255.255.0
+        </p>
+      </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page4">
+          <h2>
+              How to Supernet:
+          </h2>
+          <p>
+              1. Ignore everything else but the mask at first. Use the network mask to determine the number of IP addresses in the current block:
+          </p>
+          <p>
+              255.255.255.0 = 11111111.11111111.11111111.00000000
+          </p>
+          <p>
+              The zeroes on the right hand side in the mask indicate how many bits are used for hosts in the network. There are eight (8) zeroes. Eight bits host means there are 28 = 256 addresses. If we double 256, we will want 512 addresses in the new range.
+          </p>
+          <br>
+          <p>
+              2. Adjust the mask to expand the range of addresses.
+          </p>
+          <p>
+              Every bit is twice as large as the bit to the right of it. To double the addresses, we only need one additional bit.
+          </p>
+          <p>
+              OLD MASK:  255.255.255.0 = 11111111.11111111.11111111.00000000
+          </p>
+          <p>
+              NEW MASK:  255.255.254.0 = 11111111.11111111.11111110.00000000
+          </p>
+          <p>
+              When we adjusted the mask, we took away the rightmost network bit and added it to the hosts portion of the network mask. This is done just by turning that bit to 'off' (0) in the mask. This changes the value of the third octet from 255 to 254 because we took away the 1's bit from that octet.
+          </p>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page4">
+          <p>
+              3. Calculate the new network address.
+          </p>
+          <p>
+              Because the mask "masks out" the bits in the host portion, the bits in the network portion have to be counted up to figue out the new address.
+          </p>
+          <p>
+              OLD NETWORK ADDRESS:   192.168.0.0 - 11000000.101010000.00000000.00000000
+          </p>
+          <p>
+              NEW MASK: 11111111.11111111.11111110.0000
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/4-1pic.png"/>
+          <br>
+          <p>
+              In this case, we got lucky. The starting address 192.168.0.0 remains unchanged. The first address in any range of addresses is always the network address. The last address in the range is the network address with all the host bits turned on:
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/4-2pic.png"/>
+          <br>
+          <br>
+          <p>
+            Answers to the Supernetting Example:
+          </p>
+          <ul>
+            <li>
+                The new network range of addresses is 192.168.0.0 - 192.168.1.255.
+            </li>
+            <li>
+                The netmask for the range is 255.255.254.0
+            </li>
+            <li>
+                The Network Address is 192.168.0.0
+            </li>
+            <li>
+                The All Hosts Broadcast Address is 192.168.1.254
+            </li>
+          </ul>
+
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+  </ion-content>
