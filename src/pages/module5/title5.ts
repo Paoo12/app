@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { P5Page } from '../module5/page5/page5';
 
 @Component({
   selector: 'page-title5',
@@ -18,6 +19,9 @@ export class Title5Page {
     popover.present({
       ev: myEvent
     });
+  }
+  start(){
+    this.navCtrl.push(P5Page);
   }
 
 }
