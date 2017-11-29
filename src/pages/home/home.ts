@@ -4,6 +4,7 @@ import { PopoverPage } from '../popover/popover';
 import { TabsPage } from '../tabs/tabs';
 import { ModulesPage } from '../modules/modules';
 import { QuizPage } from '../quiz/quiz';
+import { CalcPage } from '../calculator/calculator';
 
 @Component({
   selector: 'page-home',
@@ -33,5 +34,9 @@ export class HomePage {
   move2()
   {
     this.navCtrl.push(QuizPage);  
+  }
+  move4()
+  {
+    this.navCtrl.push(CalcPage);
   }
 }

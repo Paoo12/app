@@ -20,6 +20,7 @@ import { P2Page } from '../pages/module2/page2/page2';
 import { P3Page } from '../pages/module3/page3/page3';
 import { P4Page } from '../pages/module4/page4/page4';
 import { P5Page } from '../pages/module5/page5/page5';
+import { CalcPage } from '../pages/calculator/calculator';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { P5Page } from '../pages/module5/page5/page5';
     P3Page,
     P4Page,
     P5Page,
+    CalcPage,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { P5Page } from '../pages/module5/page5/page5';
     P3Page,
     P4Page,
     P5Page,
+    CalcPage,
   ],
   providers: [
     StatusBar,

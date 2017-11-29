@@ -17,7 +17,603 @@
   </ion-header>
 
   <ion-content padding>
-    
+    <ion-slides>
+      <ion-slide>
+        <div class="page5">
+          <h1> IPv6 Addressing </h1>
+          <hr>
+          <p>
+              Internet Protocol version 6 (IPv6) is the latest revision of the Internet Protocol (IP) and the first version of the protocol to be widely deployed. IPv6 was developed by the Internet Engineering Task Force (IETF) to deal with the long-anticipated problem of IPv4 address exhaustion.
+          </p>
+          <h2>
+              Why New IP Version?
+          </h2>
+          <p>
+              So far, IPv4 has proven itself as a robust routable addressing protocol and has served us for decades on its best-effort-delivery mechanism. It was designed in the early 80’s and did not get any major change afterward. At the time of its birth, Internet was limited only to a few universities for their research and to the Department of Defense. IPv4 is 32 bits long and offers around 4,294,967,296 (2<sup>32</sup>) addresses. This address space was considered more than enough that time. Given below are the major points that played a key role in the birth of IPv6:
+          </p>
+          <ul>
+            <li>
+                Internet has grown exponentially and the address space allowed by IPv4 is saturating. There is a requirement to have a protocol that can satisfy the needs of future Internet addresses that is expected to grow in an unexpected manner.
+            </li>
+            <li>
+                IPv4 on its own does not provide any security feature. Data has to be encrypted with some other security application before being sent on the Internet.
+            </li>
+            <li>
+                Data prioritization in IPv4 is not up to date. Though IPv4 has a few bits reserved for Type of Service or Quality of Service, but they do not provide much functionality.
+            </li>
+            <li>
+                IPv4 enabled clients can be configured manually or they need some address configuration mechanism. It does not have a mechanism to configure a device to have globally unique IP address.
+            </li>
+          </ul>
+
+          </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="page5">
+          <p>
+              The successor of IPv4 is not designed to be backward compatible. Trying to keep the basic functionalities of IP addressing, IPv6 is redesigned entirely. It offers the following features:
+          </p>
+
+          <ul>
+            <li>
+                Larger Address Space<br>
+                In contrast to IPv4, IPv6 uses 4 times more bits to address a device on the Internet. This much of extra bits can provide approximately 3.4×1038 different combinations of addresses. This address can accumulate the aggressive requirement of address allotment for almost everything in this world. According to an estimate, 1564 addresses can be allocated to every square meter of this earth.
+            </li>
+            <li>
+                Simplified Header<br>
+                IPv6’s header has been simplified by moving all unnecessary information and options (which are present in IPv4 header) to the end of the IPv6 header. IPv6 header is only twice as bigger than IPv4 provided the fact that IPv6 address is four times longer.
+            </li>
+            <li>
+                End-to-end Connectivity<br>
+                Every system now has unique IP address and can traverse through the Internet without using NAT or other translating components. After IPv6 is fully implemented, every host can directly reach other hosts on the Internet, with some limitations involved like Firewall, organization policies, etc.
+
+            </li>
+            <li>
+                Auto-configuration<br>
+                IPv6 supports both stateful and stateless auto configuration mode of its host devices. This way, absence of a DHCP server does not put a halt on inter segment communication.
+            </li>
+            <li>
+                Faster Forwarding/Routing<br>
+                Simplified header puts all unnecessary information at the end of the header. The information contained in the first part of the header is adequate for a Router to take routing decisions, thus making routing decision as quickly as looking at the mandatory header.
+            </li>
+            <li>
+                IPSec<br>
+                Initially it was decided that IPv6 must have IPSec security, making it more secure than IPv4. This feature has now been made optional.
+            </li>
+            <li>
+                No Broadcast<br>
+                Though Ethernet/Token Ring are considered as broadcast network because they support Broadcasting, IPv6 does not have any broadcast support any more. It uses multicast to communicate with multiple hosts.
+            </li>
+            <li>
+                Anycast Support<br>
+                This is another characteristic of IPv6. IPv6 has introduced Anycast mode of packet routing. In this mode, multiple interfaces over the Internet are assigned same Anycast IP address. Routers, while routing, send the packet to the nearest destination.
+            </li>
+            <li>
+                Mobility<br>
+                IPv6 was designed keeping mobility in mind. This feature enables hosts (such as mobile phone) to roam around in different geographical area and remain connected with the same IP address. The mobility feature of IPv6 takes advantage of auto IP configuration and Extension headers.
+            </li>
+            <li>
+                Enhanced Priority Support<br>
+                IPv4 used 6 bits DSCP (Differential Service Code Point) and 2 bits ECN (Explicit Congestion Notification) to provide Quality of Service but it could only be used if the end-to-end devices support it, that is, the source and destination device and underlying network must support it.
+                In IPv6, Traffic class and Flow label are used to tell the underlying routers how to efficiently process the packet and route it.
+                
+            </li>
+            <li>
+                Smooth Transition<br>
+                Large IP address scheme in IPv6 enables to allocate devices with globally unique IP addresses. This mechanism saves IP addresses and NAT is not required. So devices can send/receive data among each other, for example, VoIP and/or any streaming media can be used much efficiently.
+                Other fact is, the header is less loaded, so routers can take forwarding decisions and forward them as quickly as they arrive.
+                
+            </li>
+            <li>
+                Extensibility<br>
+                One of the major advantages of IPv6 header is that it is extensible to add more information in the option part. IPv4 provides only 40-bytes for options, whereas options in IPv6 can be as much as the size of IPv6 packet itself.
+            </li>
+          </ul>
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page5">
+          <p>
+              In computer networking, addressing mode refers to the mechanism of hosting an address on the network. IPv6 offers several types of modes by which a single host can be addressed. More than one host can be addressed at once or the host at the closest distance can be addressed.
+          </p>
+          <h2>
+              Unicast
+          </h2>
+          <p>
+              In unicast mode of addressing, an IPv6 interface (host) is uniquely identified in a network segment. The IPv6 packet contains both source and destination IP addresses. A host interface is equipped with an IP address which is unique in that network segment.When a network switch or a router receives a unicast IP packet, destined to a single host, it sends out one of its outgoing interface which connects to that particular host.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-1pic.jpg"/>
+          <br>
+          <h2>
+              Multicast
+          </h2>
+          <p>
+              The IPv6 multicast mode is same as that of IPv4. The packet destined to multiple hosts is sent on a special multicast address. All the hosts interested in that multicast information, need to join that multicast group first. All the interfaces that joined the group receive the multicast packet and process it, while other hosts not interested in multicast packets ignore the multicast information.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-2pic.jpg"/>
+          <br>
+          <h2>
+              Anycast
+          </h2>
+          <p>
+              IPv6 has introduced a new type of addressing, which is called Anycast addressing. In this addressing mode, multiple interfaces (hosts) are assigned same Anycast IP address. When a host wishes to communicate with a host equipped with an Anycast IP address, it sends a Unicast message. With the help of complex routing mechanism, that Unicast message is delivered to the host closest to the Sender in terms of Routing cost.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-3pic.jpg"/>
+          <br>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page5">
+          <h2>
+              Hexadecimal Number System
+          </h2>
+          <p>
+              Before introducing IPv6 Address format, we shall look into Hexadecimal Number System. Hexadecimal is a positional number system that uses radix (base) of 16. To represent the values in readable format, this system uses 0-9 symbols to represent values from zero to nine and A-F to represent values from ten to fifteen. Every digit in Hexadecimal can represent values from 0 to 15.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-4pic.jpg"/>
+          <br>
+          <h2>
+              Address Structure
+          </h2>
+          <p>
+              An IPv6 address is made of 128 bits divided into eight 16-bits blocks. Each block is then converted into 4-digit Hexadecimal numbers separated by colon symbols.
+          </p>
+          <p>
+              For example, given below is a 128 bit IPv6 address represented in binary format and divided into eight 16-bits blocks:
+          </p>
+          <pre>
+              0010000000000001 0000000000000000 0011001000111000 
+              1101111111100001 0000000001100011 0000000000000000 
+              0000000000000000 1111111011111011
+          </pre>
+
+          <p>
+              Each block is then converted into Hexadecimal and separated by ‘:’ symbol:<br>
+
+              2001:0000:3238:DFE1:0063:0000:0000:FEFB
+              
+          </p>
+          <p>
+              Even after converting into Hexadecimal format, IPv6 address remains long. IPv6 provides some rules to shorten the address. The rules are as follows:
+          </p>
+          <h3>
+              Rule.1: Discard leading Zero(es):
+            </h3>
+          <p>In Block 5, 0063, the leading two 0s can be omitted, such as (5th block):<br>
+              2001:0000:3238:DFE1:63:0000:0000:FEFB
+              </p>
+          <h3>Rule.2: If two of more blocks contain consecutive zeroes, omit them all and replace with double colon sign ::, such as (6th and 7th block):
+            </h3>
+            <p>
+                2001:0000:3238:DFE1:63::FEFB
+            </p>
+            <p>
+                Consecutive blocks of zeroes can be replaced only once by :: so if there are still blocks of zeroes in the address, they can be shrunk down to a single zero, such as (2nd block):
+            </p>
+            <p>
+                2001:0:3238:DFE1:63::FEFB
+            </p>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="page5">
+          <h2>
+              Interface ID
+          </h2>
+          <p>
+              IPv6 has three different types of Unicast Address scheme. The second half of the address (last 64 bits) is always used for Interface ID. The MAC address of a system is composed of 48-bits and represented in Hexadecimal. MAC addresses are considered to be uniquely assigned worldwide. Interface ID takes advantage of this uniqueness of MAC addresses. A host can auto-configure its Interface ID by using IEEE’s Extended Unique Identifier (EUI-64) format. First, a host divides its own MAC address into two 24-bits halves. Then 16-bit Hex value 0xFFFE is sandwiched into those two halves of MAC address, resulting in EUI-64 Interface ID.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-5pic.jpg"/>
+          <br>
+          <h2>
+              Conversion of EUI-64 ID into IPv6 Interface Identifier
+          </h2>
+          <p>
+              To convert EUI-64 ID into IPv6 Interface Identifier, the most significant 7th bit of EUI-64 ID is complemented. For example:
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-6pic.png"/>
+          <br>
+          <h2>
+              Global Unicast Address
+          </h2>
+          <p>
+              This address type is equivalent to IPv4’s public address. Global Unicast addresses in IPv6 are globally identifiable and uniquely addressable.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-7pic.jpg"/>
+          <p>
+              Global Routing Prefix: The most significant 48-bits are designated as Global Routing Prefix which is assigned to specific autonomous system. The three most significant bits of Global Routing Prefix is always set to 001.
+          </p>
+          <h2>
+              Link-Local Address
+          </h2>
+          <p>
+              Auto-configured IPv6 address is known as Link-Local address. This address always starts with FE80. The first 16 bits of link-local address is always set to 1111 1110 1000 0000 (FE80). The next 48-bits are set to 0, thus:
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-8pic.jpg"/>
+          <p>
+              Link-local addresses are used for communication among IPv6 hosts on a link (broadcast segment) only. These addresses are not routable, so a Router never forwards these addresses outside the link.
+          </p>
+          <h2>
+              Unique-Local Address
+          </h2>
+          <p>
+              This type of IPv6 address is globally unique, but it should be used in local communication. The second half of this address contain Interface ID and the first half is divided among Prefix, Local Bit, Global ID and Subnet ID.
+          </p>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-9pic.jpg"/>
+          <br>
+          <p>
+              Prefix is always set to 1111 110. L bit, is set to 1 if the address is locally assigned. So far, the meaning of L bit to 0 is not defined. Therefore, Unique Local IPv6 address always starts with ‘FD’.
+          </p>
+          <h2>
+              Scope of IPv6 Unicast Addresses:
+          </h2>
+          <img style="width:100%; height:80%;" src="../../assets/img/5-10pic.jpg"/>
+          <br>
+          <p>The scope of Link-local address is limited to the segment. Unique Local Address are locally global, but are not routed over the Internet, limiting their scope to an organization’s boundary. Global Unicast addresses are globally unique and recognizable. They shall make the essence of Internet v2 addressing.
+
+          </p>
+
+        </div>
+      </ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        Version 6 has slightly complex structure of IP address than that of IPv4. IPv6 has reserved a few addresses and address notations for special purposes. See the table below:
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-11pic.jpg"/>
+    <br>
+    <ul>
+      <li>
+          As shown in the table, the address 0:0:0:0:0:0:0:0/128 does not specify anything and is said to be an unspecified address. After simplifying, all the 0s are compacted to ::/128.
+      </li>
+      <li>
+          In IPv4, the address 0.0.0.0 with netmask 0.0.0.0 represents the default route. The same concept is also applied to IPv6, address 0:0:0:0:0:0:0:0 with netmask all 0s represents the default route. After applying IPv6 rule, this address is compressed to ::/0.
+      </li>
+      <li>
+          Loopback addresses in IPv4 are represented by 127.0.0.1 to 127.255.255.255 series. But in IPv6, only 0:0:0:0:0:0:0:1/128 represents the Loopback address. After loopback address, it can be represented as ::1/128.
+      </li>
+
+    </ul>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <h2>
+        Reserved Multicast Address for Routing Protocols
+    </h2>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-12pic.jpg"/>
+    <br>
+    <ul>
+      <li>
+          The above table shows the reserved multicast addresses used by interior routing protocol.
+      </li>
+      <li>
+          The addresses are reserved following the same rules of IPv4.
+      </li>
+    </ul>
+
+      <h2>
+          Reserved Multicast Address for Routers/Node
+      </h2>
+      <img style="width:100%; height:80%;" src="../../assets/img/5-13pic.jpg"/>
+      <br>
+      <ul>
+        <li>
+            •	These addresses help routers and hosts to speak to available routers and hosts on a segment without being configured with an IPv6 address. Hosts use EUI-64 based auto-configuration to self-configure an IPv6 address and then speak to available hosts/routers on the segment by means of these addresses.
+        </li>
+      </ul>
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        The wonder of IPv6 lies in its header. An IPv6 address is 4 times larger than IPv4, but surprisingly, the header of an IPv6 address is only 2 times larger than that of IPv4. IPv6 headers have one Fixed Header and zero or more Optional (Extension) Headers. All the necessary information that is essential for a router is kept in the Fixed Header. The Extension Header contains optional information that helps routers to understand how to handle a packet/flow.
+    </p>
+    <h2>
+      Fixed Header
+    </h2>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-14pic.jpg"/>
+    <br>
+    <p>IPv6 fixed header is 40 bytes long and contains the following information.</p>
+    <ul>
+      <li>
+          Version (4-bits): It represents the version of Internet Protocol, i.e. 0110.
+      </li>
+      <li>
+          Traffic Class (8-bits): These 8 bits are divided into two parts. The most significant 6 bits are used for Type of Service to let the Router Known what services should be provided to this packet. The least significant 2 bits are used for Explicit Congestion Notification (ECN).
+      </li>
+      <li>
+          Flow Label (20-bits): This label is used to maintain the sequential flow of the packets belonging to a communication. The source labels the sequence to help the router identify that a particular packet belongs to a specific flow of information. This field helps avoid re-ordering of data packets. It is designed for streaming/real-time media.
+      </li>
+      <li>
+          Payload Length (16-bits): This field is used to tell the routers how much information a particular packet contains in its payload. Payload is composed of Extension Headers and Upper Layer data. With 16 bits, up to 65535 bytes can be indicated; but if the Extension Headers contain Hop-by-Hop Extension Header, then the payload may exceed 65535 bytes and this field is set to 0.
+      </li>
+      <li>
+          Next Header (8-bits): This field is used to indicate either the type of Extension Header, or if the Extension Header is not present then it indicates the Upper Layer PDU. The values for the type of Upper Layer PDU are same as IPv4’s.
+      </li>
+      <li>
+          Hop Limit (8-bits): This field is used to stop packet to loop in the network infinitely. This is same as TTL in IPv4. The value of Hop Limit field is decremented by 1 as it passes a link (router/hop). When the field reaches 0 the packet is discarded.
+      </li>
+      <li>
+          Source Address (128-bits): This field indicates the address of originator of the packet.
+      </li>
+      <li>
+          Destination Address (128-bits): This field provides the address of intended recipient of the packet.
+      </li>
+    </ul>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <h2>
+        Extension Headers
+    </h2>
+    <p>
+        In IPv6, the Fixed Header contains only that much information which is necessary, avoiding those information which is either not required or is rarely used. All such information is put between the Fixed Header and the Upper layer header in the form of Extension Headers. Each Extension Header is identified by a distinct value.
+    </p>
+    <p>
+        When Extension Headers are used, IPv6 Fixed Header’s Next Header field points to the first Extension Header. If there is one more Extension Header, then the first Extension Header’s ‘Next-Header’ field points to the second one, and so on. The last Extension Header’s ‘Next-Header’ field points to the Upper Layer Header. Thus, all the headers points to the next one in a linked list manner.
+    </p>
+    <p>
+        If the Next Header field contains the value 59, it indicates that there are no headers after this header, not even Upper Layer Header.
+
+    </p>
+    <p>
+        The following Extension Headers must be supported as per RFC 2460:
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-15pic.jpg"/>
+    <br>
+    <p>The sequence of Extension Headers should be:
+
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-16pic.jpg"/>
+    <br>
+    <p>
+        These headers:
+    </p>
+    <ol type="1">
+      <li>
+          should be processed by First and subsequent destinations.
+      </li>
+      <li>
+          should be processed by Final Destination.
+      </li>
+
+    </ol>
+
+    <p>
+        Extension Headers are arranged one after another in a linked list manner, as depicted in the following diagram:
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-17pic.jpg"/>
+  </div>
+</ion-slide>
+
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        In IPv4, a host that wants to communicate with another host on the network needs to have an IP address acquired either by means of DHCP or by manual configuration. As soon as a host is equipped with some valid IP address, it can speak to any host on the subnet. To communicate on layer-3, a host must also know the IP address of the other host. Communication on a link, is established by means of hardware embedded MAC Addresses. To know the MAC address of a host whose IP address is known, a host sends ARP broadcast and in return, the intended host sends back its MAC address.
+    </p>
+    <p>
+        In IPv6, there are no broadcast mechanisms. It is not a must for an IPv6 enabled host to obtain an IP address from DHCP or manually configured, but it can auto-configure its own IP.
+    </p>
+    <p>
+        ARP has been replaced by ICMPv6 Neighbor Discovery Protocol.
+    </p>
+    <h2>
+        Neighbor Discovery Protocol
+    </h2>
+    <p>
+        A host in IPv6 network is capable of auto-configuring itself with a unique link-local address. As soon as host gets an IPv6 address, it joins a number of multicast groups. All communications related to that segment take place on those multicast addresses only. A host goes through a series of states in IPv6:
+    </p>
+    <ul>
+      <li>
+          Neighbor Solicitation: <br>
+          After configuring all IPv6’s either manually, or by DHCP Server or by auto-configuration, the host sends a Neighbor Solicitation message out to FF02::1/16 multicast address for all its IPv6 addresses in order to know that no one else occupies the same addresses.
+      </li>
+      <li>
+          DAD (Duplicate Address Detection): <br>
+          When the host does not listen from anything from the segment regarding its Neighbor Solicitation message, it assumes that no duplicate address exists on the segment.
+      </li>
+      <li>
+          •	Neighbor Advertisement: <br>
+          After assigning the addresses to its interfaces and making them up and running, the host once again sends out a Neighbor Advertisement message telling all other hosts on the segment, that it has assigned those IPv6 addresses to its interfaces.
+      </li>
+    </ul>
+
+    <p>
+        Once a host is done with the configuration of its IPv6 addresses, it does the following things:
+    </p>
+    <ul>
+      <li>
+          Router Solicitation: <br>
+          A host sends a Router Solicitation multicast packet (FF02::2/16) out on its segment to know the presence of any router on this segment. It helps the host to configure the router as its default gateway. If its default gateway router goes down, the host can shift to a new router and makes it the default gateway.
+      </li>
+      <li>
+          Router Advertisement: <br>
+          When a router receives a Router Solicitation message, it response back to the host, advertising its presence on that link.
+      </li>
+      <li>
+          Redirect: <br>
+          This may be the situation where a Router receives a Router Solicitation request but it knows that it is not the best gateway for the host. In this situation, the router sends back a Redirect message telling the host that there is a better ‘next-hop’ router available. Next-hop is where the host will send its data destined to a host which does not belong to the same segment.
+          
+          
+      </li>
+    </ul>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        In IPv4, addresses were created in classes. Classful IPv4 addresses clearly define the bits used for network prefixes and the bits used for hosts on that network. To subnet in IPv4, we play with the default classful netmask which allows us to borrow host bits to be used as subnet bits. This results in multiple subnets but less hosts per subnet. That is, when we borrow host bits to create a subnet, it costs us in lesser bit to be used for host addresses.
+    </p>
+    <p>
+        IPv6 addresses use 128 bits to represent an address which includes bits to be used for subnetting. The second half of the address (least significant 64 bits) is always used for hosts only. Therefore, there is no compromise if we subnet the network.
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-18pic.jpg"/>
+    <br>
+    <p>
+        16 bits of subnet is equivalent to IPv4’s Class B Network. Using these subnet bits, an organization can have another 65 thousands of subnets which is by far, more than enough.
+    </p>
+    <p>
+        Thus routing prefix is /64 and host portion is 64 bits. We can further subnet the network beyond 16 bits of Subnet ID, by borrowing host bits; but it is recommended that 64 bits should always be used for hosts addresses because auto-configuration requires 64 bits.
+    </p>
+    <p>
+        IPv6 subnetting works on the same concept as Variable Length Subnet Masking in IPv4.
+    </p>
+    <p>
+        /48 prefix can be allocated to an organization providing it the benefit of having up to /64 subnet prefixes, which is 65535 sub-networks, each having 264hosts. A /64 prefix can be assigned to a point-to-point connection where there are only two hosts (or IPv6 enabled devices) on a link.
+    </p>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        Complete transition from IPv4 to IPv6 might not be possible because IPv6 is not backward compatible. This results in a situation where either a site is on IPv6 or it is not. It is unlike implementation of other new technologies where the newer one is backward compatible so the older system can still work with the newer version without any additional changes.
+    </p>
+    <p>
+        To overcome this short-coming, we have a few technologies that can be used to ensure slow and smooth transition from IPv4 to IPv6.
+    </p>
+    <h2>
+        Dual Stack Routers
+    </h2>
+    <p>
+        A router can be installed with both IPv4 and IPv6 addresses configured on its interfaces pointing to the network of relevant IP scheme.
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-19pic.jpg"/>
+    <br>
+    <p>
+        In the above diagram, a server having IPv4 as well as IPv6 address configured for it can now speak with all the hosts on both the IPv4 as well as the IPv6 networks with the help of a Dual Stack Router. The Dual Stack Router, can communicate with both the networks. It provides a medium for the hosts to access a server without changing their respective IP versions.
+    </p>
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <h2>
+        Tunneling
+    </h2>
+    <p>
+        In a scenario where different IP versions exist on intermediate path or transit networks, tunneling provides a better solution where user’s data can pass through a non-supported IP version.
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-20pic.jpg"/>
+    <br>
+    The above diagram depicts how two remote IPv4 networks can communicate via a Tunnel, where the transit network was on IPv6. Vice versa is also possible where the transit network is on IPv6 and the remote sites that intend to communicate are on IPv4.
+
+  </div>
+</ion-slide>
+<ion-slide>
+  <div class="page5">
+    <h2>
+        NAT Protocol Translation
+    </h2>
+    <p>
+        This is another important method of transition to IPv6 by means of a NAT-PT (Network Address Translation – Protocol Translation) enabled device. With the help of a NAT-PT device, actual can take place happens between IPv4 and IPv6 packets and vice versa. See the diagram below:
+    </p>
+    <img style="width:100%; height:80%;" src="../../assets/img/5-21pic.jpg"/>
+    <br>
+    <p>
+        A host with IPv4 address sends a request to an IPv6 enabled server on Internet that does not understand IPv4 address. In this scenario, the NAT-PT device can help them communicate. When the IPv4 host sends a request packet to the IPv6 server, the NAT-PT device/router strips down the IPv4 packet, removes IPv4 header, and adds IPv6 header and passes it through the Internet. When a response from the IPv6 server comes for the IPv4 host, the router does vice versa.
+    </p>
+
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <p>
+        Routing concepts remain same in case of IPv6 but almost all routing protocols have been redefined accordingly. We discussed earlier, how a host speaks to its gateway. Routing is a process to forward routable data choosing the best route among several available routes or path to the destination. A router is a device that forwards data that is not explicitly destined to it.
+    </p>
+    <p>
+        There exists two forms of routing protocols:
+    </p>
+    <ul>
+      <li>
+          Distance Vector Routing Protocol: <br>
+          A router running distance vector protocol advertises its connected routes and learns new routes from its neighbors. The routing cost to reach a destination is calculated by means of hops between the source and destination. A router generally relies on its neighbor for best path selection, also known as “routing-by-rumors”. RIP and BGP are Distance Vector Protocols.
+      </li>
+      <li>
+          Link-State Routing Protocol: <br>
+          This protocol acknowledges the state of a Link and advertises to its neighbors. Information about new links is learnt from peer routers. After all the routing information has been converged, the Link-State Routing Protocol uses its own algorithm to calculate the best path to all available links. OSPF and IS-IS are link state routing protocols and both of them use Dijkstra’s Shortest Path First algorithm.
+      </li>
+
+    </ul>
+
+    <p>
+        Routing protocols can be divided in two categories:
+    </p>
+    <ul>
+      <li>
+          Interior Routing Protocol: <br>
+          Protocols in this categories are used within an autonomous system or organization to distribute routes among all routers inside its boundary. Examples: RIP, OSPF.
+      </li>
+      <li>
+          Exterior Routing Protocol: <br>
+          An Exterior Routing Protocol distributes routing information between two different autonomous systems or organization. Examples: BGP.
+      </li>
+    </ul>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <div class="page5">
+    <h2>
+        Routing protocols
+    </h2>
+    <ul>
+      <li>
+        <b>RIPng</b><br>
+            RIPng stands for Routing Information Protocol Next Generation. This is an Interior Routing Protocol and is a Distance Vector Protocol. RIPng has been upgraded to support IPv6.
+           
+      </li>
+      <li>
+          <b>OSPFv3</b><br>
+          Open Shortest Path First version 3 is an Interior Routing Protocol which is modified to support IPv6. This is a Link-State Protocol and uses Djikrasta’s Shortest Path First algorithm to calculate best path to all destinations.
+          
+      </li>
+      <li>
+          <b>BGPv4</b><br>
+          BGP stands for Border Gateway Protocol. It is the only open standard Exterior Gateway Protocol available. BGP is a Distance Vector protocol which takes Autonomous System as calculation metric, instead of the number of routers as Hop. BGPv4 is an upgrade of BGP to support IPv6 routing.
+          
+      </li>
+    </ul>
+
+    <h2>
+        Protocols Changed to Support IPv6
+    </h2>
+    <ul>
+      <li>
+          ICMPv6: <br>
+          Internet Control Message Protocol version 6 is an upgraded implementation of ICMP to accommodate IPv6 requirements. This protocol is used for diagnostic functions, error and information message, statistical purposes. ICMPv6’s Neighbor Discovery Protocol replaces ARP and helps discover neighbor and routers on the link.
+      </li>
+      <li>
+          DHCPv6:<br>
+          Dynamic Host Configuration Protocol version 6 is an implementation of DHCP. IPv6 enabled hosts do not require any DHCPv6 Server to acquire IP address as they can be auto-configured. Neither do they need DHCPv6 to locate DNS server because DNS can be discovered and configured via ICMPv6 Neighbor Discovery Protocol. Yet DHCPv6 Server can be used to provide these information.
+      </li>
+      <li>
+          DNS: <br>
+          There has been no new version of DNS but it is now equipped with extensions to provide support for querying IPv6 addresses. A new AAAA (quad-A) record has been added to reply IPv6 query messages. Now the DNS can reply with both IP versions (4 and 6) without any change in the query format.
+      </li>
+    </ul>
+  </div>
+</ion-slide>
+
+
+
+    </ion-slides>
 
 
 

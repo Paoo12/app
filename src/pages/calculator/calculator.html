@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        IP Subnet Calculator
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        <h2>IP Address</h2>
+    <ion-item>    
+        <hr>   
+        <input type="number" class="adrs" [(ngModel)]="i1"/>&nbsp;.
+        &nbsp;
+        <input type="number" class="adrs" [(ngModel)]="i2">&nbsp;.
+        &nbsp;
+        <input type="number" class="adrs" [(ngModel)]="i3">&nbsp;.
+        &nbsp;
+        <input type="number" class="adrs" [(ngModel)]="i4">&nbsp;  /
+        <input type="number" class="adrs" [(ngModel)]="cidr">
+        <br>
+        <br>
+        <button ion-button block (click)="calculate()">Calculate</button>
+    </ion-item>
+
+
+
+
+
+  </ion-content>
