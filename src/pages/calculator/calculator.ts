@@ -16,22 +16,21 @@ export class CalcPage {
     i3: any;
     i4: any;
     cidr: any;
-    resIP:any;
     standardClass="";
-    ipBin=[];
+    ipBin= [];
     mask=this.cidr;
     remMask=(this.mask%8);
-    countMask=(this.mask/8);
-    maskBinary="";
-    importantBlockBinary=this.ipBin[this.countMask];
-    netBlockBinary="";
-    bcBlockBinary="";
-    net="";
-    bc="";
-    netBinary="";
-    bcBinary="";
-    maskBinaryBlock="";
-    maskBlock="";
+    // countMask=Math.ceil(this.mask/8);
+     maskBinary="";
+    // importantBlockBinary=this.ipBin[this.countMask];
+    // netBlockBinary="";
+    // bcBlockBinary="";
+    // net="";
+    // bc="";
+    // netBinary="";
+    // bcBinary="";
+    // maskBinaryBlock="";
+    // maskBlock;
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, navParams: NavParams) {
 
@@ -261,68 +260,10 @@ export class CalcPage {
   if(this.cidr>32)
   this.mask="Out of Range";
 
-  if(this.remMask==0)
-  {this.countMask++;}
 
-  for(var i=1;i<=8;i++){
-  if(this.remMask>=i){
-  this.maskBinaryBlock+="1";
-  }else{
-  this.maskBinaryBlock+="0";
-  }
-  }
-
-  let maskBlock:number=parseInt(this.maskBinaryBlock,2);
-     
-  //net and broad
-  
-
-  for(var i=1;i<=8;i++)
-  {
-    if(this.maskBinaryBlock.substr(i-1,1)=="1")
-    {
-      this.netBlockBinary+=this.importantBlockBinary.substr(i-1,1);
-      this.bcBlockBinary+=this.importantBlockBinary.substr(i-1,1);
-    }
-    else
-    {
-    this.netBlockBinary+="0";
-     this.bcBlockBinary+="1";
-    }
-  }
-
-
-for(var i=1;i<=4;i++){
-  if(this.countMask>i) {
-    this.netBinary+=this.ipBin[i];
-    this.bcBinary+=this.ipBin[i];
-    this.net+=parseInt(this.ipBin[i],2);
-    this.bc+=parseInt(this.ipBin[i],2);
-  }
-  else if(this.countMask>i){
-    this.netBinary+=this.netBlockBinary;
-    this.bcBinary+=this.bcBlockBinary;
-    this.net+=parseInt(this.netBlockBinary,2);
-    this.bc+=parseInt(this.bcBlockBinary,2);
-  }
-
-  else{
-    this.netBinary+="00000000";
-    this.bcBinary+="11111111";
-    this.net+="0";
-    this.bc+="255";
-  }
-  if(i<4){
-    this.netBinary+=".";
-    this.bcBinary+=".";
-    this.net+=".";
-    this.bc+=".";
-
-    }
-
-  }
+ 
 }
-
+  
 
 }
 

@@ -22,6 +22,14 @@ import { P4Page } from '../pages/module4/page4/page4';
 import { P5Page } from '../pages/module5/page5/page5';
 import { CalcPage } from '../pages/calculator/calculator';
 
+import { Quiz1Page } from '../pages/module1/quiz1/quiz1';
+import { Quiz2Page } from '../pages/module2/quiz2/quiz2';
+import { Quiz3Page } from '../pages/module3/quiz3/quiz3';
+import { Quiz4Page } from '../pages/module4/quiz4/quiz4';
+import { Quiz5Page } from '../pages/module5/quiz5/quiz5';
+
+import { Quest1Page } from '../pages/module1/quest1/quest1';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -41,6 +49,12 @@ import { CalcPage } from '../pages/calculator/calculator';
     P4Page,
     P5Page,
     CalcPage,
+    Quiz1Page,
+    Quiz2Page,
+    Quiz3Page,
+    Quiz4Page,
+    Quiz5Page,
+    Quest1Page,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +79,12 @@ import { CalcPage } from '../pages/calculator/calculator';
     P4Page,
     P5Page,
     CalcPage,
+    Quiz1Page,
+    Quiz2Page,
+    Quiz3Page,
+    Quiz4Page,
+    Quiz5Page,
+    Quest1Page,
   ],
   providers: [
     StatusBar,
