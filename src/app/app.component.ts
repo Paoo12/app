@@ -16,7 +16,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, navCtrl: NavController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
     
       statusBar.styleDefault();
@@ -38,7 +38,7 @@ export class MyApp {
   }
   closeMenu()
   {
-    
+
   }
 }
 

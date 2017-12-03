@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { Quest5_1Page } from '../quest1/quest5_1';
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Quest5_1Page } from '../quest1/quest5_1';
 })
 export class Quiz5Page {
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public alertCtrl: AlertController) {
 
   }
 
@@ -22,9 +23,27 @@ export class Quiz5Page {
     });
   }
 
-  confirm()
-  {
-    this.navCtrl.setRoot(Quest5_1Page);
+  confirm() {
+    let confirm = this.alertCtrl.create({
+      title: 'Take Exam?',
+      message: '',
+      buttons: [
+        {
+          text: 'Proceed',
+          handler: () => {
+            this.navCtrl.setRoot(Quest5_1Page);
+          }
+        },
+        {
+          text: 'Back',
+          handler: () => {
+            console.log('Back clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+
   }
 
 

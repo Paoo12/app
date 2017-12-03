@@ -84,6 +84,7 @@ import { Quest5_7Page } from '../pages/module5/quest7/quest5_7';
 import { Quest5_8Page } from '../pages/module5/quest8/quest5_8';
 import { Quest5_9Page } from '../pages/module5/quest9/quest5_9';
 import { Quest5_10Page } from '../pages/module5/quest10/quest5_10';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @NgModule({
   declarations: [
@@ -248,7 +249,8 @@ import { Quest5_10Page } from '../pages/module5/quest10/quest5_10';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    
   ]
 })
 export class AppModule {}
