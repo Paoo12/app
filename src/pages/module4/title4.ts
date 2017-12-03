@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { P4Page } from '../module4/page4/page4';
+import { Quiz4Page } from './quiz4/quiz4';
 
 @Component({
   selector: 'page-title4',
@@ -23,6 +24,9 @@ export class Title4Page {
   start(){
     this.navCtrl.push(P4Page);
   }
-
+  quiz()
+  {
+    this.navCtrl.push(Quiz4Page);
+  }
 
 }

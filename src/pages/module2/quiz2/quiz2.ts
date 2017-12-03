@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { Quest2_1Page } from '../quest1/quest2_1';
 
 
 @Component({
@@ -21,5 +22,11 @@ export class Quiz2Page {
     });
   }
 
+  confirm()
+  {
+    this.navCtrl.setRoot(Quest2_1Page);
+  }
+
+  
 
 }
