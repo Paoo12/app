@@ -28,7 +28,62 @@ import { Quiz3Page } from '../pages/module3/quiz3/quiz3';
 import { Quiz4Page } from '../pages/module4/quiz4/quiz4';
 import { Quiz5Page } from '../pages/module5/quiz5/quiz5';
 
+
+
 import { Quest1Page } from '../pages/module1/quest1/quest1';
+import { Quest2Page } from '../pages/module1/quest2/quest2';
+import { Quest3Page } from '../pages/module1/quest3/quest3';
+import { Quest4Page } from '../pages/module1/quest4/quest4';
+import { Quest5Page } from '../pages/module1/quest5/quest5';
+import { Quest6Page } from '../pages/module1/quest6/quest6';
+import { Quest7Page } from '../pages/module1/quest7/quest7';
+import { Quest8Page } from '../pages/module1/quest8/quest8';
+import { Quest9Page } from '../pages/module1/quest9/quest9';
+import { Quest10Page } from '../pages/module1/quest10/quest10';
+
+import { Quest2_1Page } from '../pages/module2/quest1/quest2_1';
+import { Quest2_2Page } from '../pages/module2/quest2/quest2_2';
+import { Quest2_3Page } from '../pages/module2/quest3/quest2_3';
+import { Quest2_4Page } from '../pages/module2/quest4/quest2_4';
+import { Quest2_5Page } from '../pages/module2/quest5/quest2_5';
+import { Quest2_6Page } from '../pages/module2/quest6/quest2_6';
+import { Quest2_7Page } from '../pages/module2/quest7/quest2_7';
+import { Quest2_8Page } from '../pages/module2/quest8/quest2_8';
+import { Quest2_9Page } from '../pages/module2/quest9/quest2_9';
+import { Quest2_10Page } from '../pages/module2/quest10/quest2_10';
+
+import { Quest3_1Page } from '../pages/module3/quest1/quest3_1';
+import { Quest3_2Page } from '../pages/module3/quest2/quest3_2';
+import { Quest3_3Page } from '../pages/module3/quest3/quest3_3';
+import { Quest3_4Page } from '../pages/module3/quest4/quest3_4';
+import { Quest3_5Page } from '../pages/module3/quest5/quest3_5';
+import { Quest3_6Page } from '../pages/module3/quest6/quest3_6';
+import { Quest3_7Page } from '../pages/module3/quest7/quest3_7';
+import { Quest3_8Page } from '../pages/module3/quest8/quest3_8';
+import { Quest3_9Page } from '../pages/module3/quest9/quest3_9';
+import { Quest3_10Page } from '../pages/module3/quest10/quest3_10';
+
+import { Quest4_1Page } from '../pages/module4/quest1/quest4_1';
+import { Quest4_2Page } from '../pages/module4/quest2/quest4_2';
+import { Quest4_3Page } from '../pages/module4/quest3/quest4_3';
+import { Quest4_4Page } from '../pages/module4/quest4/quest4_4';
+import { Quest4_5Page } from '../pages/module4/quest5/quest4_5';
+import { Quest4_6Page } from '../pages/module4/quest6/quest4_6';
+import { Quest4_7Page } from '../pages/module4/quest7/quest4_7';
+import { Quest4_8Page } from '../pages/module4/quest8/quest4_8';
+import { Quest4_9Page } from '../pages/module4/quest9/quest4_9';
+import { Quest4_10Page } from '../pages/module4/quest10/quest4_10';
+
+import { Quest5_1Page } from '../pages/module5/quest1/quest5_1';
+import { Quest5_2Page } from '../pages/module5/quest2/quest5_2';
+import { Quest5_3Page } from '../pages/module5/quest3/quest5_3';
+import { Quest5_4Page } from '../pages/module5/quest4/quest5_4';
+import { Quest5_5Page } from '../pages/module5/quest5/quest5_5';
+import { Quest5_6Page } from '../pages/module5/quest6/quest5_6';
+import { Quest5_7Page } from '../pages/module5/quest7/quest5_7';
+import { Quest5_8Page } from '../pages/module5/quest8/quest5_8';
+import { Quest5_9Page } from '../pages/module5/quest9/quest5_9';
+import { Quest5_10Page } from '../pages/module5/quest10/quest5_10';
 
 @NgModule({
   declarations: [

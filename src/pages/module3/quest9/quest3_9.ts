@@ -5,10 +5,10 @@ import { PopoverController } from 'ionic-angular/components/popover/popover-cont
 
 
 @Component({
-  selector: 'page-quest3',
-  templateUrl: 'quest3.html'
+  selector: 'page-quest9',
+  templateUrl: 'quest3_9.html'
 })
-export class Quest3Page {
+export class Quest3_9Page {
 
     toggleshowhide:any;
     two:any;
