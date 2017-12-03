@@ -17,64 +17,57 @@
   </ion-header>
 
   <ion-content padding>
-
-    <ion-card [hidden]="toggleshowhide">
-        <ion-card-header>
-            <h1>Question 1</h1>
-        </ion-card-header>
-
-        <ion-card-content>
-            <h2>1. Ip Address are written in 2 Notations. What are these 2 Notations?</h2>
-            <br>
-            <ion-list>
-                
-                  <ion-item>
-                    <ion-label>Octal Notation</ion-label>
-                    <ion-checkbox [(ngModel)]="one"></ion-checkbox>
-                  </ion-item>
-                
-                  <ion-item>
-                    <ion-label>Hexadecimal Notation</ion-label>
-                    <ion-checkbox [(ngModel)]="two"></ion-checkbox>
-                  </ion-item>
-                
-                  <ion-item>
-                    <ion-label>Dotted Incrementing Notation</ion-label>
-                    <ion-checkbox [(ngModel)]="three"></ion-checkbox>
-                  </ion-item>
-
-                  <ion-item>
-                    <ion-label>Dotted Decimal Notation</ion-label>
-                    <ion-checkbox [(ngModel)]="four"></ion-checkbox>
-                  </ion-item>
-                
-                </ion-list>
-
-                <button ion-button block (click)="validate1()">Next</button>
-              
-              
-            
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-header>
-            Question 2
-        </ion-card-header>
-        <ion-card-content>
-            <h2>
-                    2.	This is one of the major protocols in the TCP/IP protocols suite. This protocol has the responsibility of identifying hosts based upon their logical addresses and to route data among them over the underlying network.
-
-            </h2>
-
-            <br>
-            
-        </ion-card-content>
-    </ion-card>
-
-    
-
-
-
-
-  </ion-content>
+      
+          <ion-card radio-group>
+              <ion-card-header>
+                  <h1>Question 1</h1>
+              </ion-card-header>
+      
+              <ion-card-content>
+              <h2>IPv4 uses a 32-bit addressing scheme. What does IPv6 use?</h2>
+                  <br>
+                  <ion-list>
+                      
+                        <ion-item>
+                          <ion-label>
+       
+      16-bit
+      </ion-label>
+                          <ion-radio value="one"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>
+      
+      56-bit
+      </ion-label>
+                           <ion-radio value="two"></ion-radio>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label>
+      
+      64-bit
+      </ion-label>
+                          <ion-radio value="three"></ion-radio>
+                        </ion-item>
+      
+                        <ion-item>
+                          <ion-label>
+      
+      128-bit
+      </ion-label>
+                           <ion-radio value="four"></ion-radio>
+                        </ion-item>
+                      
+                      </ion-list>
+      
+                      <button ion-button block (click)="validate1()">Next</button>
+                    
+                    
+                   
+              </ion-card-content>
+        </ion-card> 
+      </ion-content>
+      
+      

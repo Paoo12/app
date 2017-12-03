@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        IP Addressing Exam
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        
+            <ion-card radio-group>
+                <ion-card-header>
+                    <h1>Question 4</h1>
+                </ion-card-header>
+        
+                <ion-card-content>
+                <h2> You have a network that needs 29 subnets while maximizing the number of host addresses available on each subnet. How many bits must you borrow from the host field to provide the correct subnet mask?  <br>
+                    <ion-list>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        2
+        </ion-label>
+                            <ion-radio value="one"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        3
+        </ion-label>
+                             <ion-radio value="two"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        4
+        </ion-label>
+                            <ion-radio value="three"></ion-radio>
+                          </ion-item>
+        
+                          <ion-item>
+                            <ion-label>
+        
+        5
+        </ion-label>
+                             <ion-radio value="four"></ion-radio>
+                          </ion-item>
+                        
+                        </ion-list>
+        
+                        <button ion-button block (click)="validate1()">Next</button>
+                      
+                      
+                     
+                </ion-card-content>
+          </ion-card> 
+        </ion-content>
+        

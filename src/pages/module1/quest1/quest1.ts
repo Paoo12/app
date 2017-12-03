@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { Quest2Page } from '../quest2/quest2';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { PopoverController } from 'ionic-angular/components/popover/popover-cont
 })
 export class Quest1Page {
 
-    toggleshowhide:any;
+    x=0;
+    one:any;
     two:any;
     three:any;
 
@@ -26,7 +28,6 @@ export class Quest1Page {
   }
   validate1()
   {
-    this.toggleshowhide = true;
-    this.toggleshowhide = !this.toggleshowhide;
+    this.navCtrl.push(Quest2Page);
   }
 }

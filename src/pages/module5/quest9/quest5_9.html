@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        IP Addressing Exam
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        
+            <ion-card radio-group>
+                <ion-card-header>
+                    <h1>Question 9</h1>
+                </ion-card-header>
+        
+                <ion-card-content>
+                <h2>From the following, which one is the valid IPv6 address?</h2><br>
+                    <ion-list>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        1001:6515:6515:0000:0000:0000:0000:80je
+        </ion-label>
+                            <ion-radio value="one"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        Fke2:0000:0000:0000::1
+        </ion-label>
+                             <ion-radio value="two"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        Fe03:1
+        </ion-label>
+                            <ion-radio value="three"></ion-radio>
+                          </ion-item>
+        
+                          <ion-item>
+                            <ion-label>
+        
+        3001:0ab8:9958::8001
+        </ion-label>
+                             <ion-radio value="four"></ion-radio>
+                          </ion-item>
+                        
+                        </ion-list>
+        
+                        <button ion-button block (click)="validate1()">Next</button>
+                      
+                      
+                     
+                </ion-card-content>
+          </ion-card> 
+        </ion-content>
+        

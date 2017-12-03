@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { Quest5_5Page } from '../quest5/quest5_5';
 
 
 @Component({
@@ -23,6 +24,11 @@ export class Quest5_4Page {
     popover.present({
       ev: myEvent
     });
+  }
+
+  validate1()
+  {
+    this.navCtrl.push(Quest5_5Page);
   }
 
 }

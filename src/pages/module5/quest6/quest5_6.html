@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        IP Addressing Exam
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        <ion-card radio-group>
+            <ion-card-header>
+                <h1>Question 6</h1>
+            </ion-card-header>
+    
+            <ion-card-content>
+                <h2>Which statement(s) about IPv6 addresses are true?</h2>
+
+                <br>
+                <ol type="1">
+                    <li>
+                            Leading zeros are required.
+                    </li>
+                    <li>
+                            Two colons (::) are used to represent successive hexadecimal fields of zeros
+                    </li>
+                    <li>
+                            Two colons (::) are used to separate fields.
+                    </li>
+                    <li>
+                            A single interface will have multiple IPv6 addresses of different types.
+                    </li>
+                </ol>
+                <ion-list>
+                    
+                      <ion-item>
+                        <ion-label>1 and 3</ion-label>
+                        <ion-radio value="one"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>2 and 4</ion-label>
+                         <ion-radio value="two"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>1, 3 and 4</ion-label>
+                        <ion-radio value="three"></ion-radio>
+                      </ion-item>
+                      <ion-item>
+                            <ion-label>All of the Above</ion-label>
+                            <ion-radio value="four"></ion-radio>
+                          </ion-item>
+    
+                  
+                    </ion-list>
+    
+                    <button ion-button block (click)="validate1()">Next</button>
+                  
+                  
+                 
+            
+            </ion-card-content>
+        </ion-card>
+    
+      </ion-content>

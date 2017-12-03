@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+            IPv4 Variable Length Subnet Exam
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        <ion-card radio-group>
+            <ion-card-header>
+                <h1>Question 5</h1>
+            </ion-card-header>
+    
+            <ion-card-content>
+                <h2>If you are assigned an IP address 192.168.1.0/24 and plans to deploy VLSM. There is some requirement which you have to fulfil.</h2>
+                <br>
+                <ion-list>
+                    
+                      <ion-item>
+                        <ion-label>Subnet A = 120 Host</ion-label>
+                        <ion-radio value="one"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>Subnet B = 60 Host</ion-label>
+                         <ion-radio value="two"></ion-radio>
+                      </ion-item>
+                    
+                      <ion-item>
+                        <ion-label>Subnet C = 30 Host</ion-label>
+                        <ion-radio value="three"></ion-radio>
+                      </ion-item>
+
+                      <ion-item>
+                            <ion-label>Subnet D = 10 Host</ion-label>
+                            <ion-radio value="four"></ion-radio>
+                          </ion-item>
+    
+                  
+                    </ion-list>
+    
+                    <button ion-button block (click)="validate1()">Next</button>
+                  
+                  
+                 
+            
+            </ion-card-content>
+        </ion-card>
+    
+      </ion-content>

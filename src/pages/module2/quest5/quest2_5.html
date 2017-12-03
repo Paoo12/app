@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        IP Addressing Exam
+      </ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+      <ion-icon name="contact" item-end></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+        
+            <ion-card radio-group>
+                <ion-card-header>
+                    <h1>Question 5</h1>
+                </ion-card-header>
+        
+                <ion-card-content>
+                <h2>The network address of 172.16.0.0/19 provides how many subnets and hosts?  <br>
+                    <ion-list>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        7 subnets, 30 hosts each
+        </ion-label>
+                            <ion-radio value="one"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        8 subnets, 8,190 hosts each
+        </ion-label>
+                             <ion-radio value="two"></ion-radio>
+                          </ion-item>
+                        
+                          <ion-item>
+                            <ion-label>
+        
+        8 subnets, 2,046 hosts each
+        </ion-label>
+                            <ion-radio value="three"></ion-radio>
+                          </ion-item>
+        
+                          <ion-item>
+                            <ion-label>
+        
+        7 subnets, 2,046 hosts each
+        
+        </ion-label>
+                             <ion-radio value="four"></ion-radio>
+                          </ion-item>
+                        
+                        </ion-list>
+        
+                        <button ion-button block (click)="validate1()">Next</button>
+                      
+                      
+                     
+                </ion-card-content>
+          </ion-card> 
+        </ion-content>
+        
+        
+        
+        
