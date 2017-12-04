@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
+import { Quest4_5Page } from '../quest5/quest4_5';
+import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { PopoverPage } from '../../popover/popover';
+import { ModulesPage } from '../../modules/modules';
+
 
 @Component({
   selector: 'page-endpage4',
@@ -7,8 +12,21 @@ import { NavController } from 'ionic-angular';
 })
 export class End4Page {
 
-  constructor(public navCtrl: NavController) {
+    x:any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController) {
+    this.x = this.navParams.get('score');
+  }
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
+  }
+  
+  back()
+  {
+      this.navCtrl.setRoot(ModulesPage);
   }
 
 }

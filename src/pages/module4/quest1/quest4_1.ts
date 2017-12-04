@@ -14,6 +14,7 @@ export class Quest4_1Page {
     toggleshowhide:any;
     two:any;
     three:any;
+    x=0;
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
 
@@ -25,8 +26,14 @@ export class Quest4_1Page {
       ev: myEvent
     });
   }
+  ans()
+  {
+    this.x=this.x+1;
+    console.log("x= ", this.x);
+  }
   validate1()
   {
-    this.navCtrl.push(Quest4_2Page);
+    console.log(this.x);
+    this.navCtrl.push(Quest4_2Page, {score: this.x});
   }
 }

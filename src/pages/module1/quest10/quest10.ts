@@ -38,7 +38,7 @@ export class Quest10Page {
   validate1()
   {
     console.log(this.x);
-    this.navCtrl.push(EndPage, {score: this.x});
+    this.navCtrl.setRoot(EndPage, {score: this.x});
   }
 
 }
