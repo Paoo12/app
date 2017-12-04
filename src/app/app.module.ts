@@ -93,6 +93,8 @@ import { End4Page } from '../pages/module4/endpage4/endpage4';
 import { End5Page } from '../pages/module5/endpage5/endpage5';
 import { LoginPage } from '../pages/login/login';
 
+import{ ScoresPage } from '../pages/scores/scores';
+
 
 @NgModule({
   declarations: [
@@ -178,6 +180,7 @@ import { LoginPage } from '../pages/login/login';
     End4Page,
     End5Page,
     LoginPage,
+    ScoresPage,
   ],
   imports: [
     BrowserModule,
@@ -267,6 +270,7 @@ import { LoginPage } from '../pages/login/login';
     End4Page,
     End5Page,
     LoginPage,
+    ScoresPage,
   ],
   providers: [
     StatusBar,

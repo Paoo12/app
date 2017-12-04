@@ -5,6 +5,7 @@ import { TabsPage } from '../tabs/tabs';
 import { ModulesPage } from '../modules/modules';
 import { QuizPage } from '../quiz/quiz';
 import { CalcPage } from '../calculator/calculator';
+import { ScoresPage } from '../scores/scores';
 
 
 @Component({
@@ -33,9 +34,9 @@ export class HomePage {
   {
     this.navCtrl.push(ModulesPage);
   }
-  move2()
+  move3()
   {
-    this.navCtrl.push(QuizPage);  
+    this.navCtrl.push(ScoresPage);  
   }
   move4()
   {

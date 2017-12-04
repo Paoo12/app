@@ -1,0 +1,46 @@
+<ion-header>
+        <ion-navbar color="primary">
+          <ion-buttons start>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+          <ion-title>
+            Scores
+          </ion-title>
+          <ion-buttons end>
+          <button ion-button icon-only (click)="presentPopover($event)">
+          <ion-icon name="contact" item-end></ion-icon>
+          </button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+
+      <ion-content padding>
+        <ion-card>
+            <ion-card-header>
+                Course Scores
+            </ion-card-header>
+
+            <hr>
+
+            <ion-card-content>
+                <h2>IP Addressing Score: <span>{{course1}}</span> </h2>
+                <hr>
+                <h2>IPv4 Subnetting Score: <span>{{course2}}</span> </h2>
+                <hr>
+                <h2>IPv4 VLSM Score: <span>{{course3}}</span> </h2>
+                <hr>
+                <h2>IPv4 Supernetting Score: <span>{{course4}}</span> </h2>
+                <hr>
+                <h2>IPv6 Addressing Score: <span>{{course5}}</span> </h2>
+                <hr>
+            </ion-card-content>
+
+        </ion-card>
+
+
+
+
+
+        </ion-content>
