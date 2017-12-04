@@ -6,11 +6,13 @@ import { ModulesPage } from '../modules/modules';
 import { QuizPage } from '../quiz/quiz';
 import { CalcPage } from '../calculator/calculator';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+ 
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
 

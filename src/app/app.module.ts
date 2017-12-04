@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -91,6 +91,8 @@ import { End2Page } from '../pages/module2/endpage2/endpage2';
 import { End3Page } from '../pages/module3/endpage3/endpage3';
 import { End4Page } from '../pages/module4/endpage4/endpage4';
 import { End5Page } from '../pages/module5/endpage5/endpage5';
+import { LoginPage } from '../pages/login/login';
+
 
 @NgModule({
   declarations: [
@@ -175,6 +177,7 @@ import { End5Page } from '../pages/module5/endpage5/endpage5';
     End3Page,
     End4Page,
     End5Page,
+    LoginPage,
   ],
   imports: [
     BrowserModule,
@@ -263,11 +266,15 @@ import { End5Page } from '../pages/module5/endpage5/endpage5';
     End3Page,
     End4Page,
     End5Page,
+    LoginPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    
+
+  
     
   ]
 })
