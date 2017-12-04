@@ -86,6 +86,12 @@ import { Quest5_9Page } from '../pages/module5/quest9/quest5_9';
 import { Quest5_10Page } from '../pages/module5/quest10/quest5_10';
 import { NavController } from 'ionic-angular/navigation/nav-controller';
 
+import { EndPage } from '../pages/module1/endpage/endpage';
+import { End2Page } from '../pages/module2/endpage2/endpage2';
+import { End3Page } from '../pages/module3/endpage3/endpage3';
+import { End4Page } from '../pages/module4/endpage4/endpage4';
+import { End5Page } from '../pages/module5/endpage5/endpage5';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -163,6 +169,12 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     Quest5_8Page,
     Quest5_9Page,
     Quest5_10Page,
+
+    EndPage,
+    End2Page,
+    End3Page,
+    End4Page,
+    End5Page,
   ],
   imports: [
     BrowserModule,
@@ -245,6 +257,12 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
     Quest5_8Page,
     Quest5_9Page,
     Quest5_10Page,
+
+    EndPage,
+    End2Page,
+    End3Page,
+    End4Page,
+    End5Page,
   ],
   providers: [
     StatusBar,

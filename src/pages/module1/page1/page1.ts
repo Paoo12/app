@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
+import { ModulesPage } from '../../modules/modules';
 
 
 @Component({
@@ -20,6 +21,11 @@ export class P1Page {
       ev: myEvent
     });
   }
+  back()
+  {
+    this.navCtrl.setRoot(ModulesPage);
+  }
+
 
 
 }
