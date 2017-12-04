@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { Quest7Page } from '../quest7/quest7';
+import { Quest5Page } from '../quest5/quest5';
 
 
 @Component({
@@ -14,8 +15,12 @@ export class Quest6Page {
     toggleshowhide:any;
     two:any;
     three:any;
+    x:any;
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, 
+    public navParams: NavParams) {
+      this.x = this.navParams.get('score');
 
   }
 
@@ -26,9 +31,15 @@ export class Quest6Page {
     });
   }
 
+  ans()
+  {
+    this.x=this.x+1;
+    console.log("x= ", this.x);
+  }
   validate1()
   {
-    this.navCtrl.push(Quest7Page);
+    console.log(this.x);
+    this.navCtrl.push(Quest7Page, {score: this.x});
   }
 
 }

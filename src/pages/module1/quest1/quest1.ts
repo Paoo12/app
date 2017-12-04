@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { Quest2Page } from '../quest2/quest2';
@@ -13,10 +13,11 @@ export class Quest1Page {
 
     x=0;
     one:any;
-    two:any;
-    three:any;
+    two:boolean;
+    three:boolean;
+    four:boolean;
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public navParams:NavParams) {
 
   }
 
@@ -28,6 +29,11 @@ export class Quest1Page {
   }
   validate1()
   {
-    this.navCtrl.push(Quest2Page);
+    if((this.two==true)&&(this.three==true))
+    this.x= this.x+1;
+
+    console.log(this.x);
+    this.navCtrl.push(Quest2Page, {score: this.x});
+
   }
 }

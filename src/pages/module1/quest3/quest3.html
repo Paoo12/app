@@ -25,26 +25,26 @@
         <ion-card-content>
             <h2>IPv4 addresses are divided into two parts. What are these two parts?</h2>
             <br>
-            <ion-list radio-group>
+            <ion-list>
                 
                   <ion-item>
                     <ion-label>IP Host</ion-label>
-                    <ion-radio value="one"></ion-radio>
+                    <ion-checkbox [(ngModel)]="one"></ion-checkbox>
                   </ion-item>
                 
                   <ion-item>
                     <ion-label>Network Host</ion-label>
-                     <ion-radio value="two"></ion-radio>
+                     <ion-checkbox [(ngModel)]="two"></ion-checkbox>
                   </ion-item>
                 
                   <ion-item>
                     <ion-label>CIDR</ion-label>
-                    <ion-radio value="three"></ion-radio>
+                    <ion-checkbox [(ngModel)]="three"></ion-checkbox>
                   </ion-item>
 
                   <ion-item>
                     <ion-label>Host Id</ion-label>
-                    <ion-radio value="four"></ion-radio>
+                    <ion-checkbox [(ngModel)]="four"></ion-checkbox>
                   </ion-item>
 
               
