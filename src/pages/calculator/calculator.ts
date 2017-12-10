@@ -263,7 +263,110 @@ export class CalcPage {
 
  
 }
-  
+
+
+calculate1()
+{
+
+
+  var ipBin={};
+  ipBin[1]=String("00000000"+parseInt(this.i1,10).toString(2)).slice(-8);
+  ipBin[2]=String("00000000"+parseInt(this.i2,10).toString(2)).slice(-8);
+  ipBin[3]=String("00000000"+parseInt(this.i3,10).toString(2)).slice(-8);
+  ipBin[4]=String("00000000"+parseInt(this.i4,10).toString(2)).slice(-8);
+
+  var mask=this.cidr;
+  var importantBlock=Math.ceil(mask/8);
+  var importantBlockBinary=ipBin[importantBlock];
+  var maskBinaryBlockCount=mask%8;
+  if(maskBinaryBlockCount==0)importantBlock++;
+  var maskBinaryBlock="";
+  var maskBlock="";
+  for(var i=1;i<=8;i++)
+  {
+  if(maskBinaryBlockCount>=i)
+  {
+  maskBinaryBlock+="1";
+  }
+  else
+  {
+  maskBinaryBlock+="0";
+  }
+  }
+
+  var maskBlock1=parseInt(maskBinaryBlock,2);
+  var netBlockBinary="";
+  var bcBlockBinary="";
+  for(var i=1;i<=8;i++){
+  if(maskBinaryBlock.substr(i-1,1)=="1"){
+  netBlockBinary+=importantBlockBinary.substr(i-1,1);
+  bcBlockBinary+=importantBlockBinary.substr(i-1,1);
+  }else{
+  netBlockBinary+="0";
+  bcBlockBinary+="1";
+  }
+  }
+
+  var mask: any;
+  var maskBinary="";
+var net="";
+var bc="";
+var netBinary="";
+var bcBinary="";
+var rangeA="";
+var rangeB="";
+//loop to put whole strings block together
+for(var i=1;i<=4;i++){
+if(importantBlock>i) {
+//blocks before the important block.
+mask+="255";
+maskBinary+="11111111";
+netBinary+=ipBin[i];
+bcBinary+=ipBin[i];
+net+=parseInt(ipBin[i],2);
+bc+=parseInt(ipBin[i],2);
+rangeA+=parseInt(ipBin[i],2);
+rangeB+=parseInt(ipBin[i],2);
+}else if (importantBlock==i) {
+//the important block.
+mask+=maskBlock1;
+maskBinary+=maskBinaryBlock;
+netBinary+=netBlockBinary;
+bcBinary+=bcBlockBinary;
+net+=parseInt(netBlockBinary,2);
+bc+=parseInt(bcBlockBinary,2);
+rangeA+=(parseInt(netBlockBinary,2)+1);
+rangeB+=(parseInt(bcBlockBinary,2)-1);
+}else {
+//block after the important block.
+mask+=0;
+maskBinary+="00000000";
+netBinary+="00000000";
+bcBinary+="11111111";
+net+="0";
+bc+="255";
+rangeA+=0;
+rangeB+=255;
+}
+//add . separator except the last block
+if(i<4){
+mask+=".";
+maskBinary+=".";
+netBinary+=".";
+bcBinary+=".";
+net+=".";
+bc+=".";
+rangeA+=".";
+rangeB+=".";
+}
+}
+document.getElementById('resNet').innerHTML=net;
+document.getElementById('resBC').innerHTML=bc;
+document.getElementById('resRange').innerHTML=rangeA + " - " + rangeB;
+document.getElementById('resBinNet').innerHTML=netBinary;
+document.getElementById('resBinBC').innerHTML=bcBinary;
+}
+
 
 }
 

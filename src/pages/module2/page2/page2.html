@@ -17,6 +17,16 @@
   </ion-header>
 
   <ion-content padding>
+
+      <ion-fab right bottom>
+          <button ion-fab mini><ion-icon name="switch"></ion-icon></button>
+          <ion-fab-list side="left">
+            <button (click)="list()" ion-fab><ion-icon name="list"></ion-icon></button>
+            <button (click)="home()" ion-fab><ion-icon name="home"></ion-icon></button>
+            <button (click)="calc()" ion-fab><ion-icon name="calculator"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+      
     <ion-slides>
       <ion-slide>
         <div class="page2">
@@ -49,7 +59,7 @@
     <p>In Class A, only the first octet is used as Network identifier and rest of three octets are used to be assigned to Hosts (i.e. 16777214 Hosts per Network). To make more subnet in Class A, bits from Host part are borrowed and the subnet mask is changed accordingly.</p>
     <p>For example, if one MSB (Most Significant Bit) is borrowed from host bits of second octet and added to Network address, it creates two Subnets (21=2) with (223-2) 8388606 Hosts per Subnet.</p>
     <p>The Subnet mask is changed accordingly to reflect subnetting. Given below is a list of all possible combination of Class A subnets:</p>
-    <img style="width:100%; height:80%;" src="../../assets/img/2-1pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/2-1pic.jpg"/>
     <br>
     <p>In case of subnetting too, the very first and last IP address of every subnet is used for Subnet Number and Subnet Broadcast IP address respectively. Because these two IP addresses cannot be assigned to hosts, sub-netting cannot be implemented by using more than 30 bits as Network Bits, which provides less than two hosts per subnet.</p>
   </div>
@@ -59,7 +69,7 @@
   <div class="page2">
     <h2>Class B Subnets</h2>
     <p>By default, using Classful Networking, 14 bits are used as Network bits providing (214) 16384 Networks and (216-2) 65534 Hosts. Class B IP Addresses can be subnetted the same way as Class A addresses, by borrowing bits from Host bits. Below is given all possible combination of Class B subnetting:</p>
-    <img style="width:100%; height:80%;" src="../../assets/img/2-2pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/2-2pic.jpg"/>
   </div>
 </ion-slide>
 
@@ -67,13 +77,13 @@
   <div class="page2">
     <h2>Class C Subnets</h2>
     <p>Class C IP addresses are normally assigned to a very small size network because it can only have 254 hosts in a network. Given below is a list of all possible combination of subnetted Class B IP address:</p>
-    <img style="width:100%; height:80%;" src="../../assets/img/2-3pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/2-3pic.jpg"/>
   </div>
 </ion-slide>
 
 <ion-slide>
   <p>The table below summarizes the possible network numbers, the total number of each type, and the number of hosts in each Class A, B, and C network.</p>
-  <img style="width:100%; height:80%;" src="../../assets/img/2-4pic.png"/>
+  <img style="width:100%; height:80%;" src="assets/img/2-4pic.png"/>
   <br>
   <p>Class A addresses begin with a 0 bit. Therefore, all addresses from 1.0.0.0 to 126.255.255.255 belong to class A (1=0000 0001; 126 = 0111 1110).
       The 0.0.0.0 address is reserved for default routing and the 127.0.0.0 address is reserved for loopback testing so they don’t belong to any class.
@@ -105,10 +115,10 @@
 <div class="page2">
   <h2>How to subnet?</h2>
   <p>example with the IP 11.0.0.1, we will write all numbers in binary form to reveal what a computer really sees in an IP address.</p>
-  <img style="width:100%; height:80%;" src="../../assets/img/2-5pic.jpg"/>
+  <img style="width:100%; height:80%;" src="assets/img/2-5pic.jpg"/>
   <br>
   <p>Now you can clearly see that the subnet mask will decide which is the Network part, which is the Host part. By borrowing 8 bits, our subnet mask will be like this:</p>
-  <img style="width:100%; height:80%;" src="../../assets/img/2-6pic.jpg"/>
+  <img style="width:100%; height:80%;" src="assets/img/2-6pic.jpg"/>
   <br>
   <p>After changing the second octet of the subnet mask from all “0” to all “1”, the Network part is now extended. Now we can create new networks by changing number in the first or second octet. This greatly increases the number of networks we can create. With this new subnet mask, IP 11.1.0.1 is in different network from IP 11.0.0.1 because “1” in the second octet now belongs to the Network part.</p>
   <p>So, in conclusion we “subnet” by borrowing bit “0” in the Host portion and converting them to bit “1”. The number of borrowed bits is depended on how many networks we need.</p>
@@ -161,7 +171,7 @@
   <div class="page2">
     <h2>Subnetting – The quick and easy way</h2>
     <p>One important thing we should notice is that a valid subnet mask must have all bit “1”s and “0”s successive, in which bit “1”s must be on the left; bit “0”s must be on the right. Therefore we only have 8 situations:</p>
-    <img style="width:100%; height:80%;" src="../../assets/img/2-8pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/2-8pic.jpg"/>
     <br>
     <p>This is a very important table to do subnet quickly! Please take some time to learn it by heart. Make sure you remember the right-most bit “1” position (the least significant bit 1, which are in red in the above table) and their equivalent decimal values.</p>
     <p>In most cases, this table is used to quickly convert a number from decimal to binary value without any calculation. For example, you can quickly convert the 4th octet of the subnet mask 255.255.255.248 to 1111<span style="text-decoration: underline;">1</span>000. Or if you are given a subnet of /29 you will know it equals to 255.255.255.248 (by thinking “/24 is the default subnet mask of class C so /29 will have the right-most bit “1” at 5th position).</p>
@@ -209,7 +219,7 @@
     <h2>2.) Learn by heart the decimal value of the rightmost bit “1” in the subnet mask:</h2>
     <p>Another way to find the increment value is to write “x” in binary: 11110000. Consider the rightmost bit “1”, the decimal value of this bit is the increment value. In this case it equals to 16.</p>
     <p>The table below summarizes the decimal values of bit “1” depending on its position. To use this method, you should learn by heart this table:</p>
-    <img style="width:100%; height:80%;" src="../../assets/img/2-9pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/2-9pic.jpg"/>
   </div>
 </ion-slide>
 

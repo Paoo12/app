@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { ModulesPage } from '../../modules/modules';
+import { HomePage } from '../../home/home';
+import { CalcPage } from '../../calculator/calculator';
 
 
 @Component({
@@ -26,6 +28,22 @@ export class P2Page {
   {
     this.navCtrl.setRoot(ModulesPage);
   }
+
+  home()
+  {
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  list()
+  {
+    this.navCtrl.setRoot(ModulesPage);
+  }
+
+  calc()
+  {
+    this.navCtrl.push(CalcPage);
+  }
+
 
 
 }

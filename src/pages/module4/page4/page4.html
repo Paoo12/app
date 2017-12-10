@@ -17,6 +17,16 @@
   </ion-header>
 
   <ion-content padding>
+
+        <ion-fab right bottom>
+                <button ion-fab mini><ion-icon name="switch"></ion-icon></button>
+                <ion-fab-list side="left">
+                  <button (click)="list()" ion-fab><ion-icon name="list"></ion-icon></button>
+                  <button (click)="home()" ion-fab><ion-icon name="home"></ion-icon></button>
+                  <button (click)="calc()" ion-fab><ion-icon name="calculator"></ion-icon></button>
+                </ion-fab-list>
+              </ion-fab>
+            
     <ion-slides>
       <ion-slide>
         <div class="page4">
@@ -113,12 +123,12 @@
           <p>
               NEW MASK: 11111111.11111111.11111110.0000
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/4-1pic.png"/>
+          <img style="width:100%; height:80%;" src="assets/img/4-1pic.png"/>
           <br>
           <p>
               In this case, we got lucky. The starting address 192.168.0.0 remains unchanged. The first address in any range of addresses is always the network address. The last address in the range is the network address with all the host bits turned on:
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/4-2pic.png"/>
+          <img style="width:100%; height:80%;" src="assets/img/4-2pic.png"/>
           <br>
           <br>
           <p>

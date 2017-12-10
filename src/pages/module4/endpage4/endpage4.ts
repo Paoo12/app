@@ -30,7 +30,7 @@ export class End4Page {
 
   feedback()
   {
-    if(this.x<6)
+    if(this.x<2)
     {  
     let alert = this.alertCtrl.create({
         title: 'Feedback',
@@ -40,7 +40,7 @@ export class End4Page {
       alert.present();
     }
 
-    else if((this.x>5)&&(this.x<9))
+    else if((this.x>1)&&(this.x<4))
     {  
     let alert = this.alertCtrl.create({
         title: 'Feedback',
@@ -50,7 +50,7 @@ export class End4Page {
       alert.present();
     }
 
-    else if((this.x==9)||(this.x==10))
+    else if((this.x==4)||(this.x==5))
     {  
     let alert = this.alertCtrl.create({
         title: 'Feedback',

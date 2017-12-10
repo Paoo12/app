@@ -3,6 +3,10 @@ import { NavController } from 'ionic-angular';
 import { PopoverPage } from '../../popover/popover';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { ModulesPage } from '../../modules/modules';
+import { HomePage } from '../../home/home';
+import { ModalController } from 'ionic-angular';
+import { CalcPage } from '../../calculator/calculator';
+
 
 
 @Component({
@@ -11,7 +15,7 @@ import { ModulesPage } from '../../modules/modules';
 })
 export class P1Page {
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public popoverCtrl: PopoverController) {
 
   }
 
@@ -24,6 +28,21 @@ export class P1Page {
   back()
   {
     this.navCtrl.setRoot(ModulesPage);
+  }
+
+  home()
+  {
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  list()
+  {
+    this.navCtrl.setRoot(ModulesPage);
+  }
+
+  calc()
+  {
+    this.navCtrl.push(CalcPage);
   }
 
 

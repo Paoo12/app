@@ -1,3 +1,6 @@
+
+
+
 <ion-header>
     <ion-navbar color="primary">
       <ion-buttons start>
@@ -20,17 +23,17 @@
         <h2>IP Address</h2>
     <ion-item>    
         <hr>   
-        <input type="number" class="adrs" [(ngModel)]="i1"/>&nbsp;.
+        <input type="number" class="adrs" id="i1" [(ngModel)]="i1"/>&nbsp;.
         &nbsp;
-        <input type="number" class="adrs" [(ngModel)]="i2">&nbsp;.
+        <input type="number" class="adrs" id="i2" [(ngModel)]="i2">&nbsp;.
         &nbsp;
-        <input type="number" class="adrs" [(ngModel)]="i3">&nbsp;.
+        <input type="number" class="adrs" id="i3" [(ngModel)]="i3">&nbsp;.
         &nbsp;
-        <input type="number" class="adrs" [(ngModel)]="i4">&nbsp;  /
-        <input type="number" class="adrs" [(ngModel)]="cidr">
+        <input type="number" class="adrs" id="i4" [(ngModel)]="i4">&nbsp;  /
+        <input type="number" class="adrs" id="cidr" [(ngModel)]="cidr">
         <br>
         <br>
-        <button ion-button block (click)="calculate()">Calculate</button>
+        <button ion-button block (click)="calculate($index); calculate1()">Calculate</button>
     </ion-item>
 
     <hr>
@@ -45,19 +48,19 @@
   </div> 
   <div class='result'>
     <span class=label>Net Address :</span>
-    <span> {{net}}</span>
+    <span class=value id=resNet></span>
     </div>
     <div class='result'>
     <span class=label>Broadcast Address :</span>
-    <span> {{bc}}</span>
+    <span class=value id=resBC></span>
    </div>
    <div class='result'>
-    <span class=label>Standard Class :</span>
+    <span class=label>Class :</span>
     <span>{{standardClass}}</span>
    </div>
    <div class='result'>
     <span class=label>Range :</span>
-    <span>{{rangeA}}{{"-"}}{{rangeB}}</span>
+    <span class=value id=resRange></span>>
     </div>
     <div class='result'>
     <span class=label>IP Binary :</span>
@@ -69,13 +72,16 @@
     </div>
     <div class='result'>
     <span class=label>Net Address Binary :</span>
-    <span>{{netBinary}}</span>
+    <span class=value id=resBinNet></span>
     </div>
     <div class='result'>
     <span class=label>BC Address Binary :</span>
-    <span>{{bcBinary}}</span>
+    <span class=value id=resBinBC></span>
     </div>
 
 
 
   </ion-content>
+
+
+ 

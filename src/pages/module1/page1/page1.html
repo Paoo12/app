@@ -17,6 +17,17 @@
   </ion-header>
 
   <ion-content padding>
+
+      <ion-fab right bottom>
+          <button ion-fab mini><ion-icon name="switch"></ion-icon></button>
+          <ion-fab-list side="left">
+            <button (click)="list()" ion-fab><ion-icon name="list"></ion-icon></button>
+            <button (click)="home()" ion-fab><ion-icon name="home"></ion-icon></button>
+            <button (click)="calc()" ion-fab><ion-icon name="calculator"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+      
+
     <ion-slides>
       <ion-slide>
    
@@ -68,15 +79,15 @@
 
    <ion-slide>
      <div class="page1">
-        <img style="width:100%; height:80%;" src="../../assets/img/1-1pic.png"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-1pic.png"/>
         <p>128+64+32+16+8+4+2+1=255</p>
         <br>
         <p>Here is a sample octet conversion when not all of the bits are set to 1.</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-2pic.png"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-2pic.png"/>
         <br>
         <p>0+64+0+0+0+0+0+1=65</p>
         <p>And this is sample shows an IP address represented in both binary and decimal.</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-3pic.png"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-3pic.png"/>
         <br>
         <p>These octets are broken down to provide an addressing scheme that can accommodate large and small
             networks.
@@ -89,10 +100,10 @@
        <p>Generally, there are two notations in which IP address is written, dotted decimal notation and hexadecimal notation.</p>
  
        <p>Dotted Decimal Notation</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-4pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-4pic.jpg"/>
        <br>
       <p>Hexadecimal Notation</p>
-      <img style="width:100%; height:80%;" src="../../assets/img/1-5pic.jpg"/>
+      <img style="width:100%; height:80%;" src="assets/img/1-5pic.jpg"/>
 <br>
       <p>Some points to be noted about dotted decimal notation: </p>
       <ol type="1">
@@ -125,15 +136,15 @@
      <div class="page1">
        <h2>Unicast Addressing Mode </h2>
        <p>In this mode, data is sent only to one destined host. The Destination Address field contains 32-bit IP address of the destination host. Here the client sends data to the targeted server:</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-6pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-6pic.jpg"/>
        <br>
        <h2>Broadcast Addressing Mode </h2>
         <p>In this mode, the packet is addressed to all the hosts in a network segment. The Destination Address field contains a special broadcast address, i.e. 255.255.255.255. When a host sees this packet on the network, it is bound to process it. Here the client sends a packet, which is entertained by all the Servers:</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-7pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-7pic.jpg"/>
         <br>
         <h2>Multicast Addressing Mode</h2>
         <p>This mode is a mix of the previous two modes, i.e. the packet sent is neither destined to a single host nor all the hosts on the segment. In this packet, the Destination Address contains a special address which starts with 224.x.x.x and can be entertained by more than one host.</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-8pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-8pic.jpg"/>
         <br>
      </div>
    </ion-slide>
@@ -142,22 +153,22 @@
      <div class="page1">
        <h3>Hierarchical Addressing Scheme </h3>
         <p>IPv4 uses hierarchical addressing scheme. An IP address, which is 32-bits in length, is divided into two or three parts as depicted:</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-9pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-9pic.jpg"/>
         <br>
         <p>A single IP address can contain information about the network and its sub-network and ultimately the host. This scheme enables the IP Address to be hierarchical where a network can have many sub-networks which in turn can have many hosts.</p>
         <br>
         <h2>Subnet Mask </h2>
         <p>The 32-bit IP address contains information about the host and its network. It is very necessary to distinguish both. For this, routers use Subnet Mask, which is as long as the size of the network address in the IP address. Subnet Mask is also 32 bits long. If the IP address in binary is ANDed with its Subnet Mask, the result yields the Network address. For example, say the IP Address is 192.168.1.152 and the Subnet Mask is 255.255.255.0 then:</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-10pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-10pic.jpg"/>
         <br>
         <p>This way the Subnet Mask helps extract the Network ID and the Host from an IP Address. It can be identified now that 192.168.1.0 is the Network number and 192.168.1.152 is the host on that network.</p>
         <br>
         <h2>Binary Representation </h2>
         <p>The positional value method is the simplest form of converting binary from decimal value. IP address is 32-bit value which is divided into 4 octets. A binary octet contains 8 bits and the value of each bit can be determined by the position of bit value '1' in the octet.</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-11pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-11pic.jpg"/>
         <br>
         <p>Positional value of bits is determined by 2 raised to power (position – 1), that is the value of a bit 1 at position 6 is 26-1 that is 25 that is 32. The total value of the octet is determined by adding up the positional value of bits. The value of 11000000 is 128+64 = 192. Some examples are shown in the table below:</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-12pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-12pic.jpg"/>
         <br>
      </div>
    </ion-slide>
@@ -178,7 +189,7 @@
       </ul>
       <br>
       <p>The class of IP address is used to determine the bits used for network ID and host ID and the number of total networks and hosts possible in that particular class. Each ISP or network administrator assigns IP address to each device that is connected to its network.</p>
-      <img style="width:100%; height:80%;" src="../../assets/img/1-13pic.jpg"/>
+      <img style="width:100%; height:80%;" src="assets/img/1-13pic.jpg"/>
      </div>
    </ion-slide>
 
@@ -206,7 +217,7 @@
 
        </ul>
        <p>IP addresses belonging to class A ranges from 1.x.x.x – 126.x.x.x</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-14pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-14pic.jpg"/>
 
      </div>
    </ion-slide>
@@ -235,7 +246,7 @@
         </ul>
         <br>
         <p>IP addresses belonging to class B ranges from 128.0.x.x – 191.255.x.x.</p>
-        <img style="width:100%; height:80%;" src="../../assets/img/1-15pic.jpg"/>
+        <img style="width:100%; height:80%;" src="assets/img/1-15pic.jpg"/>
      </div>
    </ion-slide>
 
@@ -262,7 +273,7 @@
          </li>
        </ul>
        <p>IP addresses belonging to class C ranges from 192.0.0.x – 223.255.255.x.</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-16pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-16pic.jpg"/>
      </div>
    </ion-slide>
 
@@ -271,7 +282,7 @@
        <h2>Class D</h2>
        <p>IP address belonging to class D are reserved for multi-casting. The higher order bits of the first octet of IP addresses belonging to class D are always set to 1110. The remaining bits are for the address that interested hosts recognize.</p>
        <p>Class D does not posses any sub-net mask. IP addresses belonging to class D ranges from 224.0.0.0 – 239.255.255.255.</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-17pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-17pic.jpg"/>
      </div>
    </ion-slide>
 
@@ -279,7 +290,7 @@
      <div class="page1">
        <h2>Class E</h2>
        <p>IP addresses belonging to class E are reserved for experimental and research purposes. IP addresses of class E ranges from 240.0.0.0 – 255.255.255.254. This class doesn’t have any sub-net mask. The higher order bits of first octet of class E are always set to 1111.</p>
-       <img style="width:100%; height:80%;" src="../../assets/img/1-18pic.jpg"/>
+       <img style="width:100%; height:80%;" src="assets/img/1-18pic.jpg"/>
      </div>
    </ion-slide>
 
@@ -335,7 +346,7 @@
    </ion-slide>
    <ion-slide>
      <h2>Summary of Address Classes:</h2>
-     <img style="width:100%; height:80%;" src="../../assets/img/1-18pic.jpg"/>
+     <img style="width:100%; height:80%;" src="assets/img/1-18pic.jpg"/>
    </ion-slide>
 
    <ion-slide>

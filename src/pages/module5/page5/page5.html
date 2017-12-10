@@ -17,6 +17,15 @@
   </ion-header>
 
   <ion-content padding>
+        <ion-fab right bottom>
+                <button ion-fab mini><ion-icon name="switch"></ion-icon></button>
+                <ion-fab-list side="left">
+                  <button (click)="list()" ion-fab><ion-icon name="list"></ion-icon></button>
+                  <button (click)="home()" ion-fab><ion-icon name="home"></ion-icon></button>
+                  <button (click)="calc()" ion-fab><ion-icon name="calculator"></ion-icon></button>
+                </ion-fab-list>
+              </ion-fab>
+            
     <ion-slides>
       <ion-slide>
         <div class="page5">
@@ -123,7 +132,7 @@
           <p>
               In unicast mode of addressing, an IPv6 interface (host) is uniquely identified in a network segment. The IPv6 packet contains both source and destination IP addresses. A host interface is equipped with an IP address which is unique in that network segment.When a network switch or a router receives a unicast IP packet, destined to a single host, it sends out one of its outgoing interface which connects to that particular host.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-1pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-1pic.jpg"/>
           <br>
           <h2>
               Multicast
@@ -131,7 +140,7 @@
           <p>
               The IPv6 multicast mode is same as that of IPv4. The packet destined to multiple hosts is sent on a special multicast address. All the hosts interested in that multicast information, need to join that multicast group first. All the interfaces that joined the group receive the multicast packet and process it, while other hosts not interested in multicast packets ignore the multicast information.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-2pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-2pic.jpg"/>
           <br>
           <h2>
               Anycast
@@ -139,7 +148,7 @@
           <p>
               IPv6 has introduced a new type of addressing, which is called Anycast addressing. In this addressing mode, multiple interfaces (hosts) are assigned same Anycast IP address. When a host wishes to communicate with a host equipped with an Anycast IP address, it sends a Unicast message. With the help of complex routing mechanism, that Unicast message is delivered to the host closest to the Sender in terms of Routing cost.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-3pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-3pic.jpg"/>
           <br>
 
         </div>
@@ -153,7 +162,7 @@
           <p>
               Before introducing IPv6 Address format, we shall look into Hexadecimal Number System. Hexadecimal is a positional number system that uses radix (base) of 16. To represent the values in readable format, this system uses 0-9 symbols to represent values from zero to nine and A-F to represent values from ten to fifteen. Every digit in Hexadecimal can represent values from 0 to 15.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-4pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-4pic.jpg"/>
           <br>
           <h2>
               Address Structure
@@ -208,7 +217,7 @@
           <p>
               IPv6 has three different types of Unicast Address scheme. The second half of the address (last 64 bits) is always used for Interface ID. The MAC address of a system is composed of 48-bits and represented in Hexadecimal. MAC addresses are considered to be uniquely assigned worldwide. Interface ID takes advantage of this uniqueness of MAC addresses. A host can auto-configure its Interface ID by using IEEE’s Extended Unique Identifier (EUI-64) format. First, a host divides its own MAC address into two 24-bits halves. Then 16-bit Hex value 0xFFFE is sandwiched into those two halves of MAC address, resulting in EUI-64 Interface ID.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-5pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-5pic.jpg"/>
           <br>
           <h2>
               Conversion of EUI-64 ID into IPv6 Interface Identifier
@@ -216,7 +225,7 @@
           <p>
               To convert EUI-64 ID into IPv6 Interface Identifier, the most significant 7th bit of EUI-64 ID is complemented. For example:
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-6pic.png"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-6pic.png"/>
           <br>
           <h2>
               Global Unicast Address
@@ -224,7 +233,7 @@
           <p>
               This address type is equivalent to IPv4’s public address. Global Unicast addresses in IPv6 are globally identifiable and uniquely addressable.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-7pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-7pic.jpg"/>
           <p>
               Global Routing Prefix: The most significant 48-bits are designated as Global Routing Prefix which is assigned to specific autonomous system. The three most significant bits of Global Routing Prefix is always set to 001.
           </p>
@@ -234,7 +243,7 @@
           <p>
               Auto-configured IPv6 address is known as Link-Local address. This address always starts with FE80. The first 16 bits of link-local address is always set to 1111 1110 1000 0000 (FE80). The next 48-bits are set to 0, thus:
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-8pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-8pic.jpg"/>
           <p>
               Link-local addresses are used for communication among IPv6 hosts on a link (broadcast segment) only. These addresses are not routable, so a Router never forwards these addresses outside the link.
           </p>
@@ -244,7 +253,7 @@
           <p>
               This type of IPv6 address is globally unique, but it should be used in local communication. The second half of this address contain Interface ID and the first half is divided among Prefix, Local Bit, Global ID and Subnet ID.
           </p>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-9pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-9pic.jpg"/>
           <br>
           <p>
               Prefix is always set to 1111 110. L bit, is set to 1 if the address is locally assigned. So far, the meaning of L bit to 0 is not defined. Therefore, Unique Local IPv6 address always starts with ‘FD’.
@@ -252,7 +261,7 @@
           <h2>
               Scope of IPv6 Unicast Addresses:
           </h2>
-          <img style="width:100%; height:80%;" src="../../assets/img/5-10pic.jpg"/>
+          <img style="width:100%; height:80%;" src="assets/img/5-10pic.jpg"/>
           <br>
           <p>The scope of Link-local address is limited to the segment. Unique Local Address are locally global, but are not routed over the Internet, limiting their scope to an organization’s boundary. Global Unicast addresses are globally unique and recognizable. They shall make the essence of Internet v2 addressing.
 
@@ -266,7 +275,7 @@
     <p>
         Version 6 has slightly complex structure of IP address than that of IPv4. IPv6 has reserved a few addresses and address notations for special purposes. See the table below:
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-11pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-11pic.jpg"/>
     <br>
     <ul>
       <li>
@@ -288,7 +297,7 @@
     <h2>
         Reserved Multicast Address for Routing Protocols
     </h2>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-12pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-12pic.jpg"/>
     <br>
     <ul>
       <li>
@@ -302,7 +311,7 @@
       <h2>
           Reserved Multicast Address for Routers/Node
       </h2>
-      <img style="width:100%; height:80%;" src="../../assets/img/5-13pic.jpg"/>
+      <img style="width:100%; height:80%;" src="assets/img/5-13pic.jpg"/>
       <br>
       <ul>
         <li>
@@ -321,7 +330,7 @@
     <h2>
       Fixed Header
     </h2>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-14pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-14pic.jpg"/>
     <br>
     <p>IPv6 fixed header is 40 bytes long and contains the following information.</p>
     <ul>
@@ -371,12 +380,12 @@
     <p>
         The following Extension Headers must be supported as per RFC 2460:
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-15pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-15pic.jpg"/>
     <br>
     <p>The sequence of Extension Headers should be:
 
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-16pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-16pic.jpg"/>
     <br>
     <p>
         These headers:
@@ -394,7 +403,7 @@
     <p>
         Extension Headers are arranged one after another in a linked list manner, as depicted in the following diagram:
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-17pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-17pic.jpg"/>
   </div>
 </ion-slide>
 
@@ -461,7 +470,7 @@
     <p>
         IPv6 addresses use 128 bits to represent an address which includes bits to be used for subnetting. The second half of the address (least significant 64 bits) is always used for hosts only. Therefore, there is no compromise if we subnet the network.
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-18pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-18pic.jpg"/>
     <br>
     <p>
         16 bits of subnet is equivalent to IPv4’s Class B Network. Using these subnet bits, an organization can have another 65 thousands of subnets which is by far, more than enough.
@@ -492,7 +501,7 @@
     <p>
         A router can be installed with both IPv4 and IPv6 addresses configured on its interfaces pointing to the network of relevant IP scheme.
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-19pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-19pic.jpg"/>
     <br>
     <p>
         In the above diagram, a server having IPv4 as well as IPv6 address configured for it can now speak with all the hosts on both the IPv4 as well as the IPv6 networks with the help of a Dual Stack Router. The Dual Stack Router, can communicate with both the networks. It provides a medium for the hosts to access a server without changing their respective IP versions.
@@ -509,7 +518,7 @@
     <p>
         In a scenario where different IP versions exist on intermediate path or transit networks, tunneling provides a better solution where user’s data can pass through a non-supported IP version.
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-20pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-20pic.jpg"/>
     <br>
     The above diagram depicts how two remote IPv4 networks can communicate via a Tunnel, where the transit network was on IPv6. Vice versa is also possible where the transit network is on IPv6 and the remote sites that intend to communicate are on IPv4.
 
@@ -523,7 +532,7 @@
     <p>
         This is another important method of transition to IPv6 by means of a NAT-PT (Network Address Translation – Protocol Translation) enabled device. With the help of a NAT-PT device, actual can take place happens between IPv4 and IPv6 packets and vice versa. See the diagram below:
     </p>
-    <img style="width:100%; height:80%;" src="../../assets/img/5-21pic.jpg"/>
+    <img style="width:100%; height:80%;" src="assets/img/5-21pic.jpg"/>
     <br>
     <p>
         A host with IPv4 address sends a request to an IPv6 enabled server on Internet that does not understand IPv4 address. In this scenario, the NAT-PT device can help them communicate. When the IPv4 host sends a request packet to the IPv6 server, the NAT-PT device/router strips down the IPv4 packet, removes IPv4 header, and adds IPv6 header and passes it through the Internet. When a response from the IPv6 server comes for the IPv4 host, the router does vice versa.
